@@ -64,7 +64,8 @@ scene.add(hemiLight);
 /* =============================================
    BALL SECTION WAYPOINTS (REMOVED)
    ============================================= */
-const BALL_SCALE = 1.2;
+const isMobile = () => window.innerWidth <= 768;
+const BALL_SCALE = isMobile() ? 0.85 : 1.2;
 
 /* =============================================
    STATE
@@ -76,7 +77,7 @@ let baseScale = 1;
 // Mouse hover & position tracking
 let targetMouse = { x: 0, y: 0 };
 let currentMouse = { x: 0, y: 0 };
-let basePos = { x: window.innerWidth <= 768 ? 0 : 2.0, y: window.innerWidth <= 768 ? 0.5 : 0.0, z: 0 };
+let basePos = { x: isMobile() ? 0 : 2.0, y: 0.0, z: 0 };
 
 // Auto-rotation velocities
 const BASE_SPEED = 0.003;
@@ -473,8 +474,8 @@ window.addEventListener('resize', () => {
   renderer.setSize(newSize.width, newSize.height);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   
-  basePos.x = window.innerWidth <= 768 ? 0 : 2.0;
-  basePos.y = window.innerWidth <= 768 ? 0.5 : 0.0;
+  basePos.x = isMobile() ? 0 : 2.0;
+  basePos.y = 0.0;
   if (ball) {
     ball.position.set(basePos.x, basePos.y, basePos.z);
   }
