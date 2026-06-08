@@ -4,6 +4,7 @@ import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger.js';
+import { translations } from './translations.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -292,14 +293,17 @@ window.addEventListener('scroll', () => {
 /* =============================================
    GSAP UI ENTRANCE SEQUENCE
    ============================================= */
-// Set initial states for nav-links
-gsap.set('.nav-links', { opacity: 0, y: -8 });
+// Set initial states
+gsap.set('.nav-links-wrapper', { opacity: 0, y: -8 });
+gsap.set('.lang-selector', { opacity: 0, y: -8 });
+gsap.set('.nav-cta-btn', { opacity: 0, y: -8 });
 
 const tl = gsap.timeline({ delay: 0.15 });
 
 tl.to('.nav-logo', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', clearProps: 'transform' }, 0.1)
-  .to('.nav-links', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.15)
-  .to('.profile-btn', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', clearProps: 'transform' }, 0.2)
+  .to('.nav-links-wrapper', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.15)
+  .to('.lang-selector', { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }, 0.2)
+  .to('.nav-cta-btn', { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out', clearProps: 'transform' }, 0.25)
   .to('#event-card', { opacity: 1, x: 0, duration: 1.1, ease: 'expo.out' }, 0.45)
   .to('#hero-text', { opacity: 1, x: 0, duration: 1.1, ease: 'expo.out' }, 0.55)
   .to('#nav-arrow', { opacity: 1, duration: 0.5, ease: 'power2.out' }, 1.0)
@@ -498,4 +502,58 @@ if (navArrow) {
   navArrow.addEventListener('click', () => {
     document.getElementById('stats-section')?.scrollIntoView({ behavior: 'smooth' });
   });
+}
+
+/* =============================================
+   BILINGUAL ENGINE (EN / FR)
+   ============================================= */
+function switchLanguage(lang) {
+  const dict = translations[lang];
+  if (!dict) return;
+
+  // Update all [data-i18n] elements
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key] !== undefined) {
+      el.innerHTML = dict[key];
+    }
+  });
+
+  // Update [placeholder] attributes  
+  document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (dict[key] !== undefined) {
+      el.placeholder = dict[key];
+    }
+  });
+
+  // Update <html lang> attribute
+  document.documentElement.lang = lang;
+
+  // Persist preference
+  localStorage.setItem('preferredLang', lang);
+
+  // Toggle active state on lang buttons
+  document.querySelectorAll('.lang-btn').forEach((btn) => {
+    if (btn.getAttribute('data-lang') === lang) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+}
+
+// Bind lang button clicks
+document.querySelectorAll('.lang-btn').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const lang = btn.getAttribute('data-lang');
+    switchLanguage(lang);
+  });
+});
+
+// Load persisted language on page start (after a tiny delay so GSAP entrance completes)
+const savedLang = localStorage.getItem('preferredLang') || 'en';
+if (savedLang !== 'en') {
+  // Apply saved non-English language after entrance animation
+  setTimeout(() => switchLanguage(savedLang), 500);
 }
