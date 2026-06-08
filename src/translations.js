@@ -10,8 +10,7 @@ export const translations = {
     // Hero
     hero_eyebrow: "TRAINING SESSIONS FOR KIDS",
     hero_line1: "MONTREAL'S",
-    hero_line2: "PREMIER",
-    hero_line3: "COURT",
+    hero_line2: "PREMIER COURT",
     hero_brand: "CENTRE ALLBALL",
     hero_ready: "Ready to play?",
     hero_cta: "Book a Court →",
@@ -182,8 +181,7 @@ export const translations = {
     // Hero
     hero_eyebrow: "SESSIONS D'ENTRAÎNEMENT POUR ENFANTS",
     hero_line1: "LE PREMIER",
-    hero_line2: "TERRAIN DE",
-    hero_line3: "MONTREAL",
+    hero_line2: "TERRAIN DE MONTREAL",
     hero_brand: "CENTRE ALLBALL",
     hero_ready: "Prêt à jouer ?",
     hero_cta: "Réserver un terrain →",

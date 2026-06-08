@@ -30,7 +30,7 @@
   <nav class="navbar">
     <!-- Logo -->
     <a href="#hero-section" class="nav-logo">
-      <img class="nav-logo-img" src="/logo.png" alt="ALLBALL Logo" style="height: 32px; width: auto; object-fit: contain; display: block;" />
+      <img class="nav-logo-img" src="/logo.png" alt="ALLBALL Logo" style="height: 48px; width: auto; object-fit: contain; display: block;" />
       ALLBALL
     </a>
 
@@ -115,16 +115,15 @@
 
     <!-- Hero Text -->
     <div id="hero-text">
-      <p class="eyebrow" style="color: rgba(255,255,255,0.8); text-shadow: 0 2px 10px rgba(0,0,0,0.8);">TRAINING SESSIONS FOR KIDS</p>
+      <p class="eyebrow" style="color: rgba(255,255,255,0.8); text-shadow: 0 2px 10px rgba(0,0,0,0.8);" data-i18n="hero_eyebrow">TRAINING SESSIONS FOR KIDS</p>
       <h1 class="hero-headline" style="color: white; mix-blend-mode: normal; text-shadow: 0 8px 30px rgba(0,0,0,0.8); line-height: 1;">
-        <span class="hl-line shiny-title light">MONTREAL'S</span>
-        <span class="hl-line shiny-title light">PREMIER</span>
-        <span class="hl-line shiny-title light">COURT</span>
+        <span class="hl-line shiny-title light" data-i18n="hero_line1">MONTREAL'S</span>
+        <span class="hl-line shiny-title light" data-i18n="hero_line2">PREMIER COURT</span>
       </h1>
-      <p class="hero-brand" style="color: rgba(255,255,255,0.9); text-shadow: 0 2px 10px rgba(0,0,0,0.8);">CENTRE ALLBALL</p>
+      <p class="hero-brand" style="color: rgba(255,255,255,0.9); text-shadow: 0 2px 10px rgba(0,0,0,0.8);" data-i18n="hero_brand">CENTRE ALLBALL</p>
       <div class="pricing-strip glass-pill">
-        <span class="pricing-text">Ready to play?</span>
-        <button class="btn-dark-sm" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Book a Court →</button>
+        <span class="pricing-text" data-i18n="hero_ready">Ready to play?</span>
+        <button class="btn-dark-sm" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})" data-i18n="hero_cta">Book a Court →</button>
       </div>
     </div>
 
@@ -140,7 +139,7 @@
     <!-- Scroll indicator -->
     <div class="scroll-indicator">
       <div class="scroll-line"></div>
-      <span class="scroll-text">scroll</span>
+      <span class="scroll-text" data-i18n="hero_scroll">scroll</span>
     </div>
 
     <!-- Social Media Strip -->
@@ -180,33 +179,33 @@
     <canvas id="ball-canvas"></canvas>
     
     <!-- Drag hint -->
-    <div class="drag-hint" style="bottom: 2rem; color: var(--ink-faint);">↔ drag to spin</div>
+    <div class="drag-hint" style="bottom: 2rem; color: var(--ink-faint);" data-i18n="stats_canvas_drag">↔ drag to spin</div>
     
     <div class="stats-bg-text">COURT</div>
     <div class="stats-left" style="pointer-events: none;">
-      <p class="eyebrow reveal-blur">OUR IMPACT</p>
-      <h2 class="section-headline shiny-title dark reveal-blur">ELEVATE<br>THEIR GAME.</h2>
-      <p class="section-body reveal-blur">Montreal's premier destination for youth basketball training and development. We focus on fundamentals, teamwork, and love for the game.</p>
+      <p class="eyebrow reveal-blur" data-i18n="stats_eyebrow">OUR IMPACT</p>
+      <h2 class="section-headline shiny-title dark reveal-blur" data-i18n="stats_title">ELEVATE<br>THEIR GAME.</h2>
+      <p class="section-body reveal-blur" data-i18n="stats_body">Montreal's premier destination for youth basketball training and development. We focus on fundamentals, teamwork, and love for the game.</p>
       <div class="stats-grid">
         <div class="stat-card glass-card">
-          <span class="stat-num">500+</span>
-          <span class="stat-label">Youth Players</span>
-          <span class="stat-delta delta-up">↑ Growing community</span>
+          <span class="stat-num" data-i18n="stat1_num">500+</span>
+          <span class="stat-label" data-i18n="stat1_label">Youth Players</span>
+          <span class="stat-delta delta-up" data-i18n="stat1_delta">↑ Growing community</span>
         </div>
         <div class="stat-card glass-card">
-          <span class="stat-num">4.3★</span>
-          <span class="stat-label">Google Reviews</span>
-          <span class="stat-delta delta-up">↑ 61 happy parents</span>
+          <span class="stat-num" data-i18n="stat2_num">4.3★</span>
+          <span class="stat-label" data-i18n="stat2_label">Google Reviews</span>
+          <span class="stat-delta delta-up" data-i18n="stat2_delta">↑ 61 happy parents</span>
         </div>
         <div class="stat-card glass-card">
-          <span class="stat-num">15+</span>
-          <span class="stat-label">Expert Coaches</span>
-          <span class="stat-delta delta-neutral">→ Elite experience</span>
+          <span class="stat-num" data-i18n="stat3_num">15+</span>
+          <span class="stat-label" data-i18n="stat3_label">Expert Coaches</span>
+          <span class="stat-delta delta-neutral" data-i18n="stat3_delta">→ Elite experience</span>
         </div>
         <div class="stat-card glass-card">
-          <span class="stat-num">7 Days</span>
-          <span class="stat-label">Open A Week</span>
-          <span class="stat-delta delta-up">↑ Flexible scheduling</span>
+          <span class="stat-num" data-i18n="stat4_num">7 Days</span>
+          <span class="stat-label" data-i18n="stat4_label">Open A Week</span>
+          <span class="stat-delta delta-up" data-i18n="stat4_delta">↑ Flexible scheduling</span>
         </div>
       </div>
     </div>
@@ -220,37 +219,37 @@
     <div class="poster-graphic" style="position: relative; container-type: inline-size; background-color: #0a0a0a; width: 100%; max-width: 580px; border-radius: 6px; aspect-ratio: 4/5; overflow: hidden; color: #ffffff; box-shadow: 0 30px 60px rgba(0,0,0,0.15); flex: 1; align-self: center;">
       
       <!-- Top Title -->
-      <div style="position: absolute; top: 8%; left: 0; width: 100%; text-align: center; font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 16cqw, 7rem); line-height: 0.8; letter-spacing: 0.02em; display: flex; justify-content: center; align-items: flex-start; z-index: 10;">
+      <div style="position: absolute; top: 8%; left: 0; width: 100%; text-align: center; font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 16cqw, 7rem); line-height: 0.8; letter-spacing: 0.02em; display: flex; justify-content: center; align-items: flex-start; z-index: 10;" data-i18n="poster_title">
         AB<span style="display: inline-block; width: 0.4em; height: 1.8em; border: 0.12em solid #ffffff; border-radius: 1em; margin: 0 0.05em; transform: translateY(0.1em);"></span>VE THE RIM
       </div>
       
       <!-- Top Meta Info -->
-      <div style="position: absolute; top: 20%; left: 8%; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; z-index: 10;">
+      <div style="position: absolute; top: 20%; left: 8%; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; z-index: 10;" data-i18n="poster_energy">
         ENERGY<br><span style="font-size: 1rem; letter-spacing: 0.2em; font-weight: 300;">❋❋❋</span>
       </div>
       <div style="position: absolute; top: 20%; left: 50%; transform: translateX(-50%); font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; z-index: 10;">
         00:08:42
       </div>
-      <div style="position: absolute; top: 20%; right: 8%; text-align: right; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; z-index: 10;">
+      <div style="position: absolute; top: 20%; right: 8%; text-align: right; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; z-index: 10;" data-i18n="poster_focus">
         FOCUS<br><span style="font-size: 1rem; letter-spacing: 0.1em; font-weight: 300;">○○○</span>
       </div>
 
       <!-- Vertical left text -->
-      <div style="position: absolute; top: 50%; left: 4%; transform: translateY(-50%) rotate(-90deg); transform-origin: left center; font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5em; z-index: 10; white-space: nowrap;">
+      <div style="position: absolute; top: 50%; left: 4%; transform: translateY(-50%) rotate(-90deg); transform-origin: left center; font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5em; z-index: 10; white-space: nowrap;" data-i18n="poster_rise">
         R I S E —
       </div>
 
       <!-- Vertical right text -->
       <div style="position: absolute; top: 50%; right: -12%; transform: translateY(-50%) rotate(90deg); transform-origin: left center; font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; z-index: 10; display: flex; align-items: center; gap: 0.5rem; white-space: nowrap;">
         <div style="width: 10px; height: 10px; background: #ffffff;"></div>
-        ELEVATE
+        <span data-i18n="poster_elevate">ELEVATE</span>
         <div style="display: flex; gap: 2px;">
           <div style="width: 2px; height: 12px; background: #ffffff;"></div><div style="width: 2px; height: 12px; background: #ffffff;"></div><div style="width: 2px; height: 12px; background: #ffffff;"></div><div style="width: 2px; height: 12px; background: #ffffff;"></div><div style="width: 2px; height: 12px; background: #ffffff;"></div><div style="width: 2px; height: 12px; background: #ffffff;"></div>
         </div>
       </div>
 
       <!-- Bottom text -->
-      <div style="position: absolute; bottom: 5%; left: 8%; font-family: 'Inter', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.05em; max-width: 80%; z-index: 10; line-height: 1.4;">
+      <div style="position: absolute; bottom: 5%; left: 8%; font-family: 'Inter', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.05em; max-width: 80%; z-index: 10; line-height: 1.4;" data-i18n="poster_quote">
         <div style="display: flex; gap: 4px; margin-bottom: 0.5rem;">
           <div style="width: 10px; height: 10px; background: #ffffff; border-radius: 50%;"></div>
           <div style="width: 10px; height: 10px; background: #ffffff; border-radius: 50%;"></div>
@@ -267,36 +266,36 @@
     </div>
 
     <div class="how-content" style="flex: 1;">
-      <p class="eyebrow reveal-blur">HOW IT WORKS</p>
-      <h2 class="section-headline shiny-title dark reveal-blur">THREE STEPS<br>TO THE COURT</h2>
+      <p class="eyebrow reveal-blur" data-i18n="how_eyebrow">HOW IT WORKS</p>
+      <h2 class="section-headline shiny-title dark reveal-blur" data-i18n="how_title">THREE STEPS<br>TO THE COURT</h2>
       <div class="steps-list">
         <div class="step-item glass-card">
-          <span class="step-num">01</span>
+          <span class="step-num" data-i18n="step1_num">01</span>
           <div class="step-info">
-            <h3 class="step-title">Pick a Service</h3>
-            <p class="step-desc">Whether it's a birthday party, training clinic, or casual drop-in, choose what fits your game today.</p>
+            <h3 class="step-title" data-i18n="step1_title">Pick a Service</h3>
+            <p class="step-desc" data-i18n="step1_desc">Whether it's a birthday party, training clinic, or casual drop-in, choose what fits your game today.</p>
           </div>
           <span class="step-arrow">→</span>
         </div>
         <div class="step-item glass-card">
-          <span class="step-num">02</span>
+          <span class="step-num" data-i18n="step2_num">02</span>
           <div class="step-info">
-            <h3 class="step-title">Choose a Time</h3>
-            <p class="step-desc">Browse our live schedule and secure your slot instantly. No phone tag, no hassle.</p>
+            <h3 class="step-title" data-i18n="step2_title">Choose a Time</h3>
+            <p class="step-desc" data-i18n="step2_desc">Browse our live schedule and secure your slot instantly. No phone tag, no hassle.</p>
           </div>
           <span class="step-arrow">→</span>
         </div>
         <div class="step-item glass-card">
-          <span class="step-num">03</span>
+          <span class="step-num" data-i18n="step3_num">03</span>
           <div class="step-info">
-            <h3 class="step-title">Show Up & Play</h3>
-            <p class="step-desc">Bring your gear and your A-game. Our courts are prepped and ready for you when you walk in.</p>
+            <h3 class="step-title" data-i18n="step3_title">Show Up & Play</h3>
+            <p class="step-desc" data-i18n="step3_desc">Bring your gear and your A-game. Our courts are prepped and ready for you when you walk in.</p>
           </div>
           <span class="step-arrow">→</span>
         </div>
       </div>
       <div class="how-cta-row">
-        <button class="btn-dark-lg" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Book Now →</button>
+        <button class="btn-dark-lg" data-i18n="how_cta" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Book Now →</button>
       </div>
     </div>
   </section>
@@ -332,28 +331,28 @@
 
   <!-- SERVICES GRID -->
   <section id="services-section" class="new-section">
-    <p class="eyebrow reveal-blur" style="text-align: center;">OUR OFFERINGS</p>
-    <h2 class="section-headline shiny-title dark reveal-blur" style="text-align: center; margin-bottom: 4rem;">PROGRAMS &<br>RENTALS.</h2>
+    <p class="eyebrow reveal-blur" style="text-align: center;" data-i18n="services_eyebrow">OUR OFFERINGS</p>
+    <h2 class="section-headline shiny-title dark reveal-blur" style="text-align: center; margin-bottom: 4rem;" data-i18n="services_title">PROGRAMS &<br>RENTALS.</h2>
     <div class="grid-auto">
       <div class="glass-card tier-card">
-        <h3 class="shiny-title dark" style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--ink);">Drop-in Play</h3>
-        <p style="color: var(--ink-faint); flex-grow: 1;">Show up, shoot around, or run 5v5s. Perfect for casual players looking for high-quality hardwood.</p>
-        <button class="btn-ghost" style="align-self: flex-start;" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">See Hours</button>
+        <h3 class="shiny-title dark" style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--ink);" data-i18n="service1_title">Drop-in Play</h3>
+        <p style="color: var(--ink-faint); flex-grow: 1;" data-i18n="service1_desc">Show up, shoot around, or run 5v5s. Perfect for casual players looking for high-quality hardwood.</p>
+        <button class="btn-ghost" style="align-self: flex-start;" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})" data-i18n="service1_cta">See Hours</button>
       </div>
       <div class="glass-card tier-card">
-        <h3 class="shiny-title dark" style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--ink);">Kids Clinics</h3>
-        <p style="color: var(--ink-faint); flex-grow: 1;">Structured group training focusing on basketball fundamentals for ages 6-14.</p>
-        <button class="btn-ghost" style="align-self: flex-start;" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">View Schedule</button>
+        <h3 class="shiny-title dark" style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--ink);" data-i18n="service2_title">Kids Clinics</h3>
+        <p style="color: var(--ink-faint); flex-grow: 1;" data-i18n="service2_desc">Structured group training focusing on basketball fundamentals for ages 6-14.</p>
+        <button class="btn-ghost" style="align-self: flex-start;" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})" data-i18n="service2_cta">View Schedule</button>
       </div>
       <div class="glass-card tier-card">
-        <h3 class="shiny-title dark" style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--ink);">Private Training</h3>
-        <p style="color: var(--ink-faint); flex-grow: 1;">1-on-1 coaching for accelerated skill development, tailored specifically to your game.</p>
-        <button class="btn-ghost" style="align-self: flex-start;" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Find a Coach</button>
+        <h3 class="shiny-title dark" style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--ink);" data-i18n="service3_title">Private Training</h3>
+        <p style="color: var(--ink-faint); flex-grow: 1;" data-i18n="service3_desc">1-on-1 coaching for accelerated skill development, tailored specifically to your game.</p>
+        <button class="btn-ghost" style="align-self: flex-start;" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})" data-i18n="service3_cta">Find a Coach</button>
       </div>
       <div class="glass-card tier-card" style="grid-column: 1 / -1; max-width: 800px; margin: 0 auto; width: 100%;">
-        <h3 class="shiny-title dark" style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--ink);">Team Rentals</h3>
-        <p style="color: var(--ink-faint);">Need a consistent court for your squad? Rent standard or full-sized courts for team practices and scrimmages.</p>
-        <button class="btn-ghost" style="align-self: flex-start;" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Inquire Now</button>
+        <h3 class="shiny-title dark" style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--ink);" data-i18n="service4_title">Team Rentals</h3>
+        <p style="color: var(--ink-faint);" data-i18n="service4_desc">Need a consistent court for your squad? Rent standard or full-sized courts for team practices and scrimmages.</p>
+        <button class="btn-ghost" style="align-self: flex-start;" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})" data-i18n="service4_cta">Inquire Now</button>
       </div>
     </div>
   </section>
@@ -362,22 +361,22 @@
   <section id="birthday-section" style="background: rgba(0,0,0,0.02); border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05);">
     <div class="new-section flex-split">
       <div>
-        <p class="eyebrow reveal-blur">UNFORGETTABLE MEMORIES</p>
-        <h2 class="section-headline shiny-title dark reveal-blur" style="font-size: clamp(3rem, 8vw, 5rem);">BIRTHDAY<br>PARTIES.</h2>
-        <p class="section-body reveal-blur">Celebrate their big day on the court. Our party packages take care of everything so you can actually enjoy the moment.</p>
+        <p class="eyebrow reveal-blur" data-i18n="birthday_eyebrow">UNFORGETTABLE MEMORIES</p>
+        <h2 class="section-headline shiny-title dark reveal-blur" style="font-size: clamp(3rem, 8vw, 5rem);" data-i18n="birthday_title">BIRTHDAY<br>PARTIES.</h2>
+        <p class="section-body reveal-blur" data-i18n="birthday_body">Celebrate their big day on the court. Our party packages take care of everything so you can actually enjoy the moment.</p>
         <ul class="tier-list" style="color: var(--ink); font-size: 1.1rem; margin-bottom: 3rem;">
-          <li><span style="color: #ea580c;">✓</span> 90 Minutes of Court Time</li>
-          <li><span style="color: #ea580c;">✓</span> Private Party Room</li>
-          <li><span style="color: #ea580c;">✓</span> Dedicated Party Host/Ref</li>
-          <li><span style="color: #ea580c;">✓</span> Setup & Clean up included</li>
+          <li><span style="color: #ea580c;">✓</span> <span data-i18n="birthday_item1">90 Minutes of Court Time</span></li>
+          <li><span style="color: #ea580c;">✓</span> <span data-i18n="birthday_item2">Private Party Room</span></li>
+          <li><span style="color: #ea580c;">✓</span> <span data-i18n="birthday_item3">Dedicated Party Host/Ref</span></li>
+          <li><span style="color: #ea580c;">✓</span> <span data-i18n="birthday_item4">Setup & Clean up included</span></li>
         </ul>
-        <button class="btn-dark-lg" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Inquire About Dates →</button>
+        <button class="btn-dark-lg" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})" data-i18n="birthday_cta">Inquire About Dates →</button>
       </div>
       <div style="position: relative; border-radius: 2rem; overflow: hidden; aspect-ratio: 4/5; width: 100%; max-width: 500px;">
         <img src="/kids-playing.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Kids playing basketball" />
         <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
         <div class="glass-pill" style="position: absolute; bottom: 2rem; left: 2rem; right: 2rem; padding: 1rem; background: rgba(0,0,0,0.5); backdrop-filter: blur(10px);">
-          <span style="color: white; font-weight: bold; font-style: italic;">"The easiest party we've ever hosted!"</span>
+          <span style="color: white; font-weight: bold; font-style: italic;" data-i18n="birthday_quote">"The easiest party we've ever hosted!"</span>
         </div>
       </div>
     </div>
@@ -385,42 +384,42 @@
 
   <!-- KIDS PROGRAMS & COACHES -->
   <section id="kids-section" class="new-section">
-    <p class="eyebrow reveal-blur" style="text-align: center;">EXPERT GUIDANCE</p>
-    <h2 class="section-headline shiny-title dark reveal-blur" style="text-align: center; margin-bottom: 4rem;">KIDS PROGRAMS &<br>COACHES.</h2>
+    <p class="eyebrow reveal-blur" style="text-align: center;" data-i18n="coaches_eyebrow">EXPERT GUIDANCE</p>
+    <h2 class="section-headline shiny-title dark reveal-blur" style="text-align: center; margin-bottom: 4rem;" data-i18n="coaches_title">KIDS PROGRAMS &<br>COACHES.</h2>
     <div style="display: flex; flex-direction: column; gap: 4rem;">
       <div class="glass-card" style="padding: 2.5rem; display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; justify-content: space-between;">
         <div style="flex: 1; min-width: 280px;">
-          <h3 class="shiny-title dark" style="font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--ink); margin-bottom: 1rem;">Age Groups & Schedule</h3>
-          <p style="color: var(--ink-faint); margin-bottom: 1rem;">Our clinics run every weekend, tailored specifically for different age groups to ensure maximum engagement and appropriate skill building.</p>
+          <h3 class="shiny-title dark" style="font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--ink); margin-bottom: 1rem;" data-i18n="coaches_schedule_title">Age Groups & Schedule</h3>
+          <p style="color: var(--ink-faint); margin-bottom: 1rem;" data-i18n="coaches_schedule_desc">Our clinics run every weekend, tailored specifically for different age groups to ensure maximum engagement and appropriate skill building.</p>
           <ul style="color: var(--ink); list-style: none; padding: 0; line-height: 2;">
-            <li><strong>Ages 6 - 8:</strong> Sat & Sun • 9:00 AM - 10:30 AM</li>
-            <li><strong>Ages 9 - 11:</strong> Sat & Sun • 11:00 AM - 12:30 PM</li>
-            <li><strong>Ages 12 - 14:</strong> Sat & Sun • 1:00 PM - 2:30 PM</li>
+            <li data-i18n="age_6_8"><strong>Ages 6 - 8:</strong> Sat & Sun • 9:00 AM - 10:30 AM</li>
+            <li data-i18n="age_9_11"><strong>Ages 9 - 11:</strong> Sat & Sun • 11:00 AM - 12:30 PM</li>
+            <li data-i18n="age_12_14"><strong>Ages 12 - 14:</strong> Sat & Sun • 1:00 PM - 2:30 PM</li>
           </ul>
         </div>
         <div style="flex: 1; min-width: 280px; display: flex; justify-content: flex-end;">
-           <button class="btn-dark-lg" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Register for Next Session →</button>
+           <button class="btn-dark-lg" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})" data-i18n="coaches_register">Register for Next Session →</button>
         </div>
       </div>
 
       <div>
-        <h3 class="shiny-title dark" style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--ink); text-align: center; margin-bottom: 2rem;">Meet The Coaches</h3>
+        <h3 class="shiny-title dark" style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--ink); text-align: center; margin-bottom: 2rem;" data-i18n="coaches_meet_title">Meet The Coaches</h3>
         <div class="grid-auto">
           <div class="glass-card" style="padding: 2rem; text-align: center;">
             <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin: 0 auto 1.5rem auto; border: 2px solid #ea580c;">
                <img src="/coach-james.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Coach James"/>
             </div>
-            <h4 style="color: var(--ink); font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem;">Coach James</h4>
-            <p style="color: #ea580c; font-size: 0.9rem; font-weight: bold; margin-bottom: 1rem;">Head of Youth Development</p>
-            <p style="color: var(--ink-faint); font-size: 0.95rem; line-height: 1.5;">Former D1 point guard with 8+ years of experience training young athletes in shooting mechanics and court vision.</p>
+            <h4 style="color: var(--ink); font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem;" data-i18n="coach_james_name">Coach James</h4>
+            <p style="color: #ea580c; font-size: 0.9rem; font-weight: bold; margin-bottom: 1rem;" data-i18n="coach_james_role">Head of Youth Development</p>
+            <p style="color: var(--ink-faint); font-size: 0.95rem; line-height: 1.5;" data-i18n="coach_james_bio">Former D1 point guard with 8+ years of experience training young athletes in shooting mechanics and court vision.</p>
           </div>
           <div class="glass-card" style="padding: 2rem; text-align: center;">
             <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin: 0 auto 1.5rem auto; border: 2px solid #ea580c;">
                <img src="/coach-sarah.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Coach Sarah"/>
             </div>
-            <h4 style="color: var(--ink); font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem;">Coach Sarah</h4>
-            <p style="color: #ea580c; font-size: 0.9rem; font-weight: bold; margin-bottom: 1rem;">Fundamentals Specialist</p>
-            <p style="color: var(--ink-faint); font-size: 0.95rem; line-height: 1.5;">Focuses on the 6-11 age groups, teaching correct defensive stance, footwork, and instilling a love for the game.</p>
+            <h4 style="color: var(--ink); font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem;" data-i18n="coach_sarah_name">Coach Sarah</h4>
+            <p style="color: #ea580c; font-size: 0.9rem; font-weight: bold; margin-bottom: 1rem;" data-i18n="coach_sarah_role">Fundamentals Specialist</p>
+            <p style="color: var(--ink-faint); font-size: 0.95rem; line-height: 1.5;" data-i18n="coach_sarah_bio">Focuses on the 6-11 age groups, teaching correct defensive stance, footwork, and instilling a love for the game.</p>
           </div>
         </div>
       </div>
@@ -432,23 +431,23 @@
   <!-- TESTIMONIALS -->
   <section id="testimonials-section" style="background: rgba(0,0,0,0.02); overflow: hidden;">
     <div class="new-section">
-      <p class="eyebrow reveal-blur" style="text-align: center;">COMMUNITY FEEDBACK</p>
-      <h2 class="section-headline shiny-title dark reveal-blur" style="text-align: center; margin-bottom: 4rem;">WHAT PARENTS<br>ARE SAYING.</h2>
+      <p class="eyebrow reveal-blur" style="text-align: center;" data-i18n="testimonials_eyebrow">COMMUNITY FEEDBACK</p>
+      <h2 class="section-headline shiny-title dark reveal-blur" style="text-align: center; margin-bottom: 4rem;" data-i18n="testimonials_title">WHAT PARENTS<br>ARE SAYING.</h2>
       <div class="grid-auto">
         <div class="glass-card" style="padding: 2.5rem;">
           <div style="color: #ea580c; font-size: 1.5rem; margin-bottom: 1rem;">★★★★★</div>
-          <p style="color: var(--ink); font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem;">"We hosted our son's 10th birthday here and it was incredible. The coach kept the kids engaged the whole time, and the pizza room was perfectly set up. Easiest party ever."</p>
-          <div style="color: var(--ink-faint); font-weight: 500;">— Sarah T., Montreal</div>
+          <p style="color: var(--ink); font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem;" data-i18n="testimonial1_text">"We hosted our son's 10th birthday here and it was incredible. The coach kept the kids engaged the whole time, and the pizza room was perfectly set up. Easiest party ever."</p>
+          <div style="color: var(--ink-faint); font-weight: 500;" data-i18n="testimonial1_author">— Sarah T., Montreal</div>
         </div>
         <div class="glass-card" style="padding: 2.5rem;">
           <div style="color: #ea580c; font-size: 1.5rem; margin-bottom: 1rem;">★★★★★</div>
-          <p style="color: var(--ink); font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem;">"The weekend clinics have transformed my daughter's confidence. The coaches really focus on fundamentals instead of just letting them scrimmage. Highly recommend!"</p>
-          <div style="color: var(--ink-faint); font-weight: 500;">— David M., Pointe-Claire</div>
+          <p style="color: var(--ink); font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem;" data-i18n="testimonial2_text">"The weekend clinics have transformed my daughter's confidence. The coaches really focus on fundamentals instead of just letting them scrimmage. Highly recommend!"</p>
+          <div style="color: var(--ink-faint); font-weight: 500;" data-i18n="testimonial2_author">— David M., Pointe-Claire</div>
         </div>
         <div class="glass-card" style="padding: 2.5rem;">
           <div style="color: #ea580c; font-size: 1.5rem; margin-bottom: 1rem;">★★★★★</div>
-          <p style="color: var(--ink); font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem;">"Finally a premium, clean, well-lit facility on the West Island. My teenager Practically lives here on the weekends for drop-in play. The staff is always friendly."</p>
-          <div style="color: var(--ink-faint); font-weight: 500;">— Elena R., DDO</div>
+          <p style="color: var(--ink); font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem;" data-i18n="testimonial3_text">"Finally a premium, clean, well-lit facility on the West Island. My teenager Practically lives here on the weekends for drop-in play. The staff is always friendly."</p>
+          <div style="color: var(--ink-faint); font-weight: 500;" data-i18n="testimonial3_author">— Elena R., DDO</div>
         </div>
       </div>
     </div>
@@ -457,9 +456,9 @@
   <!-- CONTACT SECTION -->
   <section id="contact-section">
     <div class="new-section" style="position: relative; z-index: 10;">
-      <p class="eyebrow reveal-blur" style="text-align: center;">GET IN TOUCH</p>
-      <h2 class="section-headline shiny-title dark reveal-blur" style="text-align: center; margin-bottom: 2rem;">BOOK A COURT<br>OR INQUIRE.</h2>
-      <p class="section-body reveal-blur" style="text-align: center; max-width: 600px; margin: 0 auto 3rem auto;">Ready to play? Fill out the form below and our team will get back to you shortly to confirm your booking.</p>
+      <p class="eyebrow reveal-blur" style="text-align: center;" data-i18n="contact_eyebrow">GET IN TOUCH</p>
+      <h2 class="section-headline shiny-title dark reveal-blur" style="text-align: center; margin-bottom: 2rem;" data-i18n="contact_title">BOOK A COURT<br>OR INQUIRE.</h2>
+      <p class="section-body reveal-blur" style="text-align: center; max-width: 600px; margin: 0 auto 3rem auto;" data-i18n="contact_body">Ready to play? Fill out the form below and our team will get back to you shortly to confirm your booking.</p>
       
       <div class="glass-card" style="padding: 3rem 2rem; max-width: 700px; margin: 0 auto;">
         <form id="contact-form" class="contact-form" onsubmit="submitForm(event)">
@@ -468,24 +467,24 @@
           <input type="hidden" name="_captcha" value="false">
           
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-            <input type="text" name="Name" class="contact-input" placeholder="Full Name" required />
-            <input type="tel" name="Phone" class="contact-input" placeholder="Phone Number" required />
+            <input type="text" name="Name" class="contact-input" placeholder="Full Name" data-i18n-placeholder="contact_placeholder_name" required />
+            <input type="tel" name="Phone" class="contact-input" placeholder="Phone Number" data-i18n-placeholder="contact_placeholder_phone" required />
           </div>
           
-          <input type="email" name="Email" class="contact-input" placeholder="Email Address" required />
+          <input type="email" name="Email" class="contact-input" placeholder="Email Address" data-i18n-placeholder="contact_placeholder_email" required />
           
           <select name="Event_Type" class="contact-input contact-select" required>
-            <option value="" disabled selected>Type of Event / Purpose</option>
-            <option value="Court Rental">Court Rental</option>
-            <option value="Kids Clinic Registration">Kids Clinic Registration</option>
-            <option value="Birthday Party Inquiry">Birthday Party Inquiry</option>
-            <option value="Private Training">Private Training</option>
-            <option value="General Question">General Question</option>
+            <option value="" disabled selected data-i18n="contact_option_default">Type of Event / Purpose</option>
+            <option value="Court Rental" data-i18n="contact_option_rental">Court Rental</option>
+            <option value="Kids Clinic Registration" data-i18n="contact_option_clinic">Kids Clinic Registration</option>
+            <option value="Birthday Party Inquiry" data-i18n="contact_option_party">Birthday Party Inquiry</option>
+            <option value="Private Training" data-i18n="contact_option_private">Private Training</option>
+            <option value="General Question" data-i18n="contact_option_general">General Question</option>
           </select>
           
-          <textarea name="Comments" class="contact-input" placeholder="Additional Comments (Optional)" rows="4"></textarea>
+          <textarea name="Comments" class="contact-input" placeholder="Additional Comments (Optional)" data-i18n-placeholder="contact_placeholder_comments" rows="4"></textarea>
           
-          <button id="submit-btn" type="submit" class="btn-dark-lg" style="margin-top: 1rem; width: 100%;">Submit Inquiry →</button>
+          <button id="submit-btn" type="submit" class="btn-dark-lg" style="margin-top: 1rem; width: 100%;" data-i18n="contact_submit">Submit Inquiry →</button>
           <p id="submit-msg" style="color: #ea580c; display: none; text-align: center; margin-top: 1rem;"></p>
         </form>
 
@@ -539,20 +538,20 @@
   <section id="location-section" style="background: rgba(0,0,0,0.02); border-top: 1px solid rgba(0,0,0,0.05); padding-bottom: 6rem;">
     <div class="new-section flex-split">
       <div style="flex: 1;">
-        <p class="eyebrow reveal-blur">VISIT US</p>
-        <h2 class="section-headline shiny-title dark reveal-blur">HOURS &<br>LOCATION.</h2>
+        <p class="eyebrow reveal-blur" data-i18n="contact_eyebrow">VISIT US</p>
+        <h2 class="section-headline shiny-title dark reveal-blur" data-i18n="contact_title">HOURS &<br>LOCATION.</h2>
         <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 2rem;">
           <div>
             <h4 style="color: var(--ink); font-size: 1.2rem; margin-bottom: 0.5rem; font-weight: 600;">Address</h4>
             <p style="color: var(--ink-faint); line-height: 1.6;">3280 Jean Yves St<br>Montreal, Quebec H9J 4C1</p>
           </div>
           <div>
-            <h4 style="color: var(--ink); font-size: 1.2rem; margin-bottom: 0.5rem; font-weight: 600;">Standard Hours</h4>
+            <h4 style="color: var(--ink); font-size: 1.2rem; margin-bottom: 0.5rem; font-weight: 600;" data-i18n="contact_hours_title">Standard Hours</h4>
             <ul style="color: var(--ink-faint); line-height: 1.8; list-style: none; padding: 0;">
-              <li style="display: flex; justify-content: space-between; max-width: 300px;"><span>Mon - Thu</span> <span>9 a.m. - 12 a.m.</span></li>
-              <li style="display: flex; justify-content: space-between; max-width: 300px;"><span>Friday</span> <span>11:30 a.m. - 3 a.m.</span></li>
-              <li style="display: flex; justify-content: space-between; max-width: 300px;"><span>Saturday</span> <span>10:30 a.m. - 2:15 a.m.</span></li>
-              <li style="display: flex; justify-content: space-between; max-width: 300px;"><span>Sunday</span> <span>9 a.m. - 12 a.m.</span></li>
+              <li style="display: flex; justify-content: space-between; max-width: 300px;" data-i18n="contact_hours_mon_thu"><span>Mon - Thu</span> <span>9 a.m. - 12 a.m.</span></li>
+              <li style="display: flex; justify-content: space-between; max-width: 300px;" data-i18n="contact_hours_fri"><span>Friday</span> <span>11:30 a.m. - 3 a.m.</span></li>
+              <li style="display: flex; justify-content: space-between; max-width: 300px;" data-i18n="contact_hours_sat"><span>Saturday</span> <span>10:30 a.m. - 2:15 a.m.</span></li>
+              <li style="display: flex; justify-content: space-between; max-width: 300px;" data-i18n="contact_hours_sun"><span>Sunday</span> <span>9 a.m. - 12 a.m.</span></li>
             </ul>
           </div>
         </div>
@@ -566,24 +565,24 @@
   <!-- FAQ Section -->
   <section id="faq-section" class="new-section">
     <div style="max-width: 800px; margin: 0 auto;">
-      <p class="eyebrow reveal-blur" style="text-align: center;">HAVE QUESTIONS?</p>
-      <h2 class="section-headline shiny-title dark reveal-blur" style="text-align: center; margin-bottom: 4rem;">FAQ.</h2>
+      <p class="eyebrow reveal-blur" style="text-align: center;" data-i18n="faq_eyebrow">HAVE QUESTIONS?</p>
+      <h2 class="section-headline shiny-title dark reveal-blur" style="text-align: center; margin-bottom: 4rem;" data-i18n="faq_title">FAQ.</h2>
       <div class="faq-list">
         <div class="faq-item" onclick="this.classList.toggle('active')">
-          <div class="faq-q">Do I need to book in advance for drop-in? <span class="faq-icon">+</span></div>
-          <div class="faq-a">While walk-ins are welcome, we highly recommend booking your pass online to guarantee entry, as we frequently reach capacity on weekends.</div>
+          <div class="faq-q" data-i18n="faq1_q">Do I need to book in advance for drop-in? <span class="faq-icon">+</span></div>
+          <div class="faq-a" data-i18n="faq1_a">While walk-ins are welcome, we highly recommend booking your pass online to guarantee entry, as we frequently reach capacity on weekends.</div>
         </div>
         <div class="faq-item" onclick="this.classList.toggle('active')">
-          <div class="faq-q">What age are the kids clinics for? <span class="faq-icon">+</span></div>
-          <div class="faq-a">Our weekend clinics are separated by age groups: 6-8, 9-11, and 12-14. We adjust the hoop height and basketball sizes accordingly.</div>
+          <div class="faq-q" data-i18n="faq2_q">What age are the kids clinics for? <span class="faq-icon">+</span></div>
+          <div class="faq-a" data-i18n="faq2_a">Our weekend clinics are separated by age groups: 6-8, 9-11, and 12-14. We adjust the hoop height and basketball sizes accordingly.</div>
         </div>
         <div class="faq-item" onclick="this.classList.toggle('active')">
-          <div class="faq-q">Can we bring outside food for birthday parties? <span class="faq-icon">+</span></div>
-          <div class="faq-a">Yes! You are welcome to bring your own cake and snacks for the party room. We also offer catering add-ons if you prefer us to handle the pizza and drinks.</div>
+          <div class="faq-q" data-i18n="faq3_q">Can we bring outside food for birthday parties? <span class="faq-icon">+</span></div>
+          <div class="faq-a" data-i18n="faq3_a">Yes! You are welcome to bring your own cake and snacks for the party room. We also offer catering add-ons if you prefer us to handle the pizza and drinks.</div>
         </div>
         <div class="faq-item" onclick="this.classList.toggle('active')">
-          <div class="faq-q">Are basketballs provided? <span class="faq-icon">+</span></div>
-          <div class="faq-a">We provide basketballs for all clinics and parties. For drop-in play or court rentals, we ask that you bring your own, though we do have limited rentals available at the front desk.</div>
+          <div class="faq-q" data-i18n="faq4_q">Are basketballs provided? <span class="faq-icon">+</span></div>
+          <div class="faq-a" data-i18n="faq4_a">We provide basketballs for all clinics and parties. For drop-in play or court rentals, we ask that you bring your own, though we do have limited rentals available at the front desk.</div>
         </div>
       </div>
     </div>
@@ -599,8 +598,8 @@
 
         <!-- Column 1: Brand -->
         <div class="footer-brand">
-          <div class="footer-logo" style="display: flex; align-items: center; gap: 8px;">
-            <img class="footer-logo-img" src="/logo.png" alt="ALLBALL Logo" style="height: 40px; width: auto; object-fit: contain; display: block;" />
+          <div class="footer-logo" style="display: flex; align-items: center; gap: 12px;">
+            <img class="footer-logo-img" src="/logo.png" alt="ALLBALL Logo" style="height: 80px; width: auto; object-fit: contain; display: block;" />
             ALLBALL
           </div>
           <p class="footer-tagline">Montreal's finest sports complex for youth basketball training and development.</p>
@@ -613,25 +612,25 @@
         <!-- Column 2: Links -->
         <div class="footer-links-grid">
           <div class="footer-link-col">
-            <span class="footer-col-title">Programs</span>
-            <a href="#">Youth Training</a>
-            <a href="#">Summer Camps</a>
-            <a href="#">Private Coaching</a>
-            <a href="#">Court Rentals</a>
+            <span class="footer-col-title" data-i18n="footer_col1_title">Programs</span>
+            <a href="#" data-i18n="footer_col1_link1">Youth Training</a>
+            <a href="#" data-i18n="footer_col1_link2">Summer Camps</a>
+            <a href="#" data-i18n="footer_col1_link3">Private Coaching</a>
+            <a href="#" data-i18n="footer_col1_link4">Court Rentals</a>
           </div>
           <div class="footer-link-col">
-            <span class="footer-col-title">About Us</span>
-            <a href="#">Our Coaches</a>
-            <a href="#">Facility Info</a>
-            <a href="#">Testimonials</a>
-            <a href="#">Careers</a>
+            <span class="footer-col-title" data-i18n="footer_col2_title">About Us</span>
+            <a href="#" data-i18n="footer_col2_link1">Our Coaches</a>
+            <a href="#" data-i18n="footer_col2_link2">Facility Info</a>
+            <a href="#" data-i18n="footer_col2_link3">Testimonials</a>
+            <a href="#" data-i18n="footer_col2_link4">Careers</a>
           </div>
           <div class="footer-link-col">
-            <span class="footer-col-title">Contact</span>
-            <a href="#">Directions</a>
-            <a href="#">Email Us</a>
-            <a href="#">Call Center</a>
-            <a href="#">FAQ</a>
+            <span class="footer-col-title" data-i18n="footer_col3_title">Contact</span>
+            <a href="#" data-i18n="footer_col3_link1">Directions</a>
+            <a href="#" data-i18n="footer_col3_link2">Email Us</a>
+            <a href="#" data-i18n="footer_col3_link3">Call Center</a>
+            <a href="#" data-i18n="footer_col3_link4">FAQ</a>
           </div>
         </div>
       </div>
@@ -639,9 +638,9 @@
       <!-- Footer bottom -->
       <div class="footer-bottom">
         <div class="footer-copyright">
-          <span>© 2026 Centre AllBall. All rights reserved.</span>
+          <span data-i18n="footer_copyright">© 2026 Centre AllBall. All rights reserved.</span>
           <span class="footer-legal">
-            <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Cookies</a>
+            <a href="#" data-i18n="footer_legal_privacy">Privacy</a> · <a href="#" data-i18n="footer_legal_terms">Terms</a> · <a href="#" data-i18n="footer_legal_cookies">Cookies</a>
           </span>
         </div>
         <div class="footer-ticker-wrap">
@@ -660,10 +659,10 @@
   <!-- Sticky CTA Bar -->
   <div class="sticky-cta-bar glass-dark" style="position: fixed; bottom: 0; left: 0; width: 100%; padding: 1rem; z-index: 100; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.1);">
     <div style="display: flex; flex-direction: column;">
-      <span style="color: white; font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; line-height: 1;">CENTRE ALLBALL</span>
-      <span style="color: var(--ink-faint); font-size: 0.8rem;">Montreal's Premier Court</span>
+      <span style="color: white; font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; line-height: 1;" data-i18n="sticky_cta_title">CENTRE ALLBALL</span>
+      <span style="color: var(--ink-faint); font-size: 0.8rem;" data-i18n="sticky_cta_subtitle">Montreal's Premier Court</span>
     </div>
-    <button class="btn-dark-sm" style="background: #ea580c; color: white;" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Book Now →</button>
+    <button class="btn-dark-sm" style="background: #ea580c; color: white;" data-i18n="sticky_cta_btn" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Book Now →</button>
   </div>
 </body>
 </html>
