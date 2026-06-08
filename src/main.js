@@ -22,7 +22,10 @@ const renderer = new THREE.WebGLRenderer({
 // Render inside the stats section instead of full window
 const statsSection = document.getElementById('stats-section');
 const getCanvasSize = () => {
-   return { width: statsSection.clientWidth, height: statsSection.clientHeight };
+  // On mobile the canvas is a square CSS block; read its actual rendered size
+  const w = canvas.clientWidth || statsSection.clientWidth;
+  const h = canvas.clientHeight || statsSection.clientHeight;
+  return { width: w, height: h };
 };
 
 const size = getCanvasSize();
@@ -65,7 +68,7 @@ scene.add(hemiLight);
    BALL SECTION WAYPOINTS (REMOVED)
    ============================================= */
 const isMobile = () => window.innerWidth <= 768;
-const BALL_SCALE = isMobile() ? 0.85 : 1.2;
+const BALL_SCALE = isMobile() ? 0.55 : 1.2;
 
 /* =============================================
    STATE

@@ -989,12 +989,12 @@ img {
     position: relative !important;
     top: auto !important;
     left: auto !important;
-    width: 100% !important;
-    height: 340px !important;
+    width: min(85vw, 380px) !important;
+    height: min(85vw, 380px) !important;
     z-index: 2;
     pointer-events: all;
     order: 2;    /* canvas goes AFTER the text */
-    margin-top: 2rem;
+    margin: 2rem auto 0;
     flex-shrink: 0;
   }
 
