@@ -775,15 +775,24 @@ img {
 .hero-social-btn[aria-label="Instagram"]:hover { color: #e1306c; }
 .hero-social-btn[aria-label="TikTok"]:hover { color: #010101; }
 
+/* Mobile: switch to horizontal row at the bottom center */
 @media (max-width: 768px) {
   .hero-social-strip {
-    right: 1rem;
-    padding: 10px 8px;
+    /* Override vertical right-side pill */
+    right: auto;
+    top: auto;
+    transform: none;
+    /* Horizontal pill, bottom-center */
+    bottom: 5.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+    padding: 10px 14px;
     gap: 8px;
   }
   .hero-social-btn {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
   }
 }
 
@@ -997,6 +1006,13 @@ img {
 .nav-arrow-btn:hover {
   background: rgba(255, 255, 255, 0.9);
   transform: translateY(-50%) scale(1.05);
+}
+
+/* Hide nav arrow on mobile — social strip is already on the right */
+@media (max-width: 768px) {
+  .nav-arrow-btn {
+    display: none;
+  }
 }
 
 /* =============================================
