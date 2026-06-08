@@ -7,6 +7,9 @@
   <title>Centre AllBall</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/src/style.css" />
+  <!-- Preconnect to Cloudinary CDN to eliminate DNS/TLS round-trip delay for the hero video -->
+  <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
+  <link rel="dns-prefetch" href="https://res.cloudinary.com" />
 </head>
 <body>
 
@@ -59,7 +62,14 @@
 
   <!-- HERO SECTION -->
   <section id="hero-section" style="position: relative; overflow: hidden;">
-    <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.65;">
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="auto"
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.65; will-change: transform;"
+    >
       <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/so_3,eo_38/YTDown_YouTube_Cinematic-Sports-Video-Basketball-Shoot-_Media_tWU8CXFLOgk_001_1080p_mdimk2.mp4" type="video/mp4" />
     </video>
     <div style="position: absolute; inset: 0; background: linear-gradient(to left, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 100%); z-index: 1;"></div>
@@ -77,6 +87,8 @@
           <img
             src="/AllBall.jpeg"
             alt="Basketball court"
+            decoding="async"
+            loading="eager"
           />
           <div class="ec-photo-shade"></div>
           <div class="ec-photo-overlay-top">
