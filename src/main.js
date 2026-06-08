@@ -46,18 +46,18 @@ scene.environment = pmrem.fromScene(new RoomEnvironment(renderer), 0.04).texture
 /* =============================================
    LIGHTING
    ============================================= */
-const ambientLight = new THREE.AmbientLight(0xfff0dd, 0.55);
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.35);
 scene.add(ambientLight);
 
-const keyLight = new THREE.DirectionalLight(0xffeedd, 1.6);
+const keyLight = new THREE.DirectionalLight(0xffffff, 2.2);
 keyLight.position.set(-2, 4, 5);
 scene.add(keyLight);
 
-const fillLight = new THREE.DirectionalLight(0xf5e8d0, 0.35);
+const fillLight = new THREE.DirectionalLight(0xffa87d, 1.6); // rich street-lamp orange glow
 fillLight.position.set(4, 1, -2);
 scene.add(fillLight);
 
-const hemiLight = new THREE.HemisphereLight(0xfff0dd, 0xcfc0ae, 0.4);
+const hemiLight = new THREE.HemisphereLight(0xffeedd, 0x111122, 0.6);
 scene.add(hemiLight);
 
 /* =============================================
@@ -72,6 +72,11 @@ let ball = null;
 let ballLoaded = false;
 let baseScale = 1;
 
+// Mouse hover & position tracking
+let targetMouse = { x: 0, y: 0 };
+let currentMouse = { x: 0, y: 0 };
+let basePos = { x: window.innerWidth <= 768 ? 0 : 2.0, y: window.innerWidth <= 768 ? 0.5 : 0.0, z: 0 };
+
 // Auto-rotation velocities
 const BASE_SPEED = 0.003;
 let autoVel = {
@@ -84,6 +89,20 @@ let isDragging = false;
 let prevMouse = { x: 0, y: 0 };
 let velocity = { x: 0, y: 0 };
 const DAMPING = 0.94;
+
+// Listen to mousemove across the window to track hover direction
+window.addEventListener('mousemove', (e) => {
+  targetMouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+  targetMouse.y = (e.clientY / window.innerHeight) * 2 - 1;
+});
+
+// Reset target positions on mouseout
+window.addEventListener('mouseout', (e) => {
+  if (e.relatedTarget === null) {
+    targetMouse.x = 0;
+    targetMouse.y = 0;
+  }
+});
 
 /* =============================================
    LOAD GLB
@@ -109,20 +128,15 @@ loader.load(
     
     // Position ball on the right side of the container (since it's in stats-left flex grid)
     ball.scale.setScalar(baseScale * BALL_SCALE);
-    if (window.innerWidth <= 768) {
-       ball.position.set(0, 0.5, 0); // centered top for mobile
-    } else {
-       ball.position.set(2.0, 0.0, 0); // fixed right side position
-    }
+    ball.position.set(basePos.x, basePos.y, basePos.z);
 
-    // Material overrides — gritty street look
+    // Material overrides — premium tactile street look
     ball.traverse((child) => {
       if (child.isMesh && child.material) {
         const m = child.material;
-        m.envMapIntensity = 0.15;
-        if (m.roughness !== undefined) m.roughness = Math.min(1.0, Math.max(0.82, (m.roughness ?? 0.5) * 1.55));
-        if (m.metalness !== undefined) m.metalness = 0;
-        if (m.color) m.color.multiplyScalar(0.68);
+        m.envMapIntensity = 0.85; // Enhance reflections
+        if (m.roughness !== undefined) m.roughness = 0.48; // Tactile leather texture
+        if (m.metalness !== undefined) m.metalness = 0.08; // Subtle sheen
         m.needsUpdate = true;
       }
     });
@@ -154,6 +168,9 @@ function ballEntrance() {
     duration: 1.3,
     ease: 'expo.out',
     delay: 0.2,
+    onComplete: () => {
+      setupScrollBall();
+    }
   });
   enableDrag();
 }
@@ -189,10 +206,13 @@ function onDragStart(e) {
 }
 
 window.addEventListener('mousemove', onDragMove);
-window.addEventListener('touchmove', onDragMove, { passive: true });
+window.addEventListener('touchmove', onDragMove, { passive: false }); // Disable passive to allow preventDefault
 
 function onDragMove(e) {
   if (!isDragging || !ball) return;
+  if (e.cancelable) {
+    e.preventDefault(); // Prevent page scroll on touch-dragging the ball
+  }
   const pos = getEventPos(e);
   velocity.x = (pos.y - prevMouse.y) * 0.006;
   velocity.y = (pos.x - prevMouse.x) * 0.006;
@@ -220,7 +240,7 @@ function onDragEnd() {
    SCROLL-DRIVEN BALL POSITIONING
    ============================================= */
 function setupScrollBall() {
-  // removed. the ball is static now.
+  // Static now. Scroll-driven updates are calculated in the animation loop.
 }
 
 /* =============================================
@@ -311,15 +331,47 @@ function animate() {
 
   if (ball) {
     if (!isDragging) {
-      // Apply momentum damping
+      // Smoothly interpolate currentMouse towards targetMouse
+      currentMouse.x += (targetMouse.x - currentMouse.x) * 0.08;
+      currentMouse.y += (targetMouse.y - currentMouse.y) * 0.08;
+
+      // Calculate scroll progress directly
+      const maxScroll = ScrollTrigger.maxScroll(window);
+      const scrollProgress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+      const baseScrollRotY = scrollProgress * Math.PI * 4.0;
+      const baseScrollRotX = scrollProgress * Math.PI * 1.2;
+
+      // Target rotation combines base scroll rotation + mouse hover tilt
+      const targetRotY = baseScrollRotY + currentMouse.x * 0.8;
+      const targetRotX = baseScrollRotX + currentMouse.y * 0.8;
+
+      // Apply momentum damping if any velocity remains from drag
       if (Math.abs(velocity.x) > 0.0001 || Math.abs(velocity.y) > 0.0001) {
         velocity.x *= DAMPING;
         velocity.y *= DAMPING;
         autoVel.x = velocity.x * 0.5;
         autoVel.y = velocity.y * 0.5;
       }
-      ball.rotation.x += autoVel.x;
-      ball.rotation.y += autoVel.y;
+
+      ball.rotation.x += (targetRotX - ball.rotation.x) * 0.08 + autoVel.x;
+      ball.rotation.y += (targetRotY - ball.rotation.y) * 0.08 + autoVel.y;
+      
+      // Decay velocity momentum over time
+      autoVel.x *= 0.95;
+      autoVel.y *= 0.95;
+
+      // Target position incorporates base position + mouse hover parallax shift
+      const targetPosX = basePos.x + currentMouse.x * 0.35;
+      const targetPosY = basePos.y - currentMouse.y * 0.35;
+
+      ball.position.x += (targetPosX - ball.position.x) * 0.08;
+      ball.position.y += (targetPosY - ball.position.y) * 0.08;
+    } else {
+      // Reset target and current coordinates while dragging to avoid snaps
+      targetMouse.x = 0;
+      targetMouse.y = 0;
+      currentMouse.x = 0;
+      currentMouse.y = 0;
     }
   }
 
@@ -338,12 +390,10 @@ window.addEventListener('resize', () => {
   renderer.setSize(newSize.width, newSize.height);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   
+  basePos.x = window.innerWidth <= 768 ? 0 : 2.0;
+  basePos.y = window.innerWidth <= 768 ? 0.5 : 0.0;
   if (ball) {
-    if (window.innerWidth <= 768) {
-       ball.position.set(0, 0.5, 0); 
-    } else {
-       ball.position.set(2.0, 0.0, 0); 
-    }
+    ball.position.set(basePos.x, basePos.y, basePos.z);
   }
   
   ScrollTrigger.refresh();

@@ -41,7 +41,7 @@
   <!-- HERO SECTION -->
   <section id="hero-section" style="position: relative; overflow: hidden; justify-content: center; transform-style: preserve-3d;">
     <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.65;">
-      <source src="./hero-bg.mp4" type="video/mp4" />
+      <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/so_3,eo_38/YTDown_YouTube_Cinematic-Sports-Video-Basketball-Shoot-_Media_tWU8CXFLOgk_001_1080p_mdimk2.mp4" type="video/mp4" />
     </video>
     <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 100%); z-index: 1;"></div>
 
@@ -97,7 +97,7 @@
         <span class="hl-line shiny-title light">COURT</span>
       </h1>
       <p class="hero-brand" style="color: rgba(255,255,255,0.9); text-shadow: 0 2px 10px rgba(0,0,0,0.8);">CENTRE ALLBALL</p>
-      <div class="pricing-strip glass-pill" style="background: rgba(255,255,255,0.9);">
+      <div class="pricing-strip glass-pill">
         <span class="pricing-text">Ready to play?</span>
         <button class="btn-dark-sm" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Book a Court →</button>
       </div>
@@ -106,9 +106,9 @@
     <!-- Signature SVG -->
     <div id="sig-wrap">
       <svg class="signature-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path class="sp1" d="M10,60 C30,10 60,70 90,30 C110,5 130,55 160,25" stroke="#0f0f0f" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-        <path class="sp2" d="M20,70 C50,40 80,65 120,45 C145,32 165,50 190,35" stroke="#0f0f0f" stroke-width="1" stroke-linecap="round" fill="none"/>
-        <path class="sp3" d="M15,75 Q60,55 100,65 Q140,75 185,60" stroke="#0f0f0f" stroke-width="0.8" stroke-linecap="round" fill="none"/>
+        <path class="sp1" d="M10,60 C30,10 60,70 90,30 C110,5 130,55 160,25" stroke="rgba(255, 255, 255, 0.6)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <path class="sp2" d="M20,70 C50,40 80,65 120,45 C145,32 165,50 190,35" stroke="#ea580c" stroke-width="1" stroke-linecap="round" fill="none"/>
+        <path class="sp3" d="M15,75 Q60,55 100,65 Q140,75 185,60" stroke="rgba(255, 255, 255, 0.45)" stroke-width="0.8" stroke-linecap="round" fill="none"/>
       </svg>
     </div>
 
@@ -252,7 +252,6 @@
     </div>
   </section>
 
-  <!-- ADDED SECTIONS -->
   <style>
     body { padding-bottom: 90px; }
     .new-section { padding: 8rem 2.5rem; position: relative; max-width: 1200px; margin: 0 auto; }
@@ -269,17 +268,17 @@
     .tier-price { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; line-height: 1; color: var(--ink); }
     .tier-list { list-style: none; padding: 0; margin: 1.5rem 0; display: flex; flex-direction: column; gap: 0.8rem; color: var(--ink-faint); }
     .tier-list li { display: flex; gap: 0.5rem; align-items: flex-start; }
-    .faq-item { border-bottom: 1px solid rgba(0,0,0,0.1); padding: 1.5rem 0; cursor: pointer; }
+    .faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); padding: 1.5rem 0; cursor: pointer; }
     .faq-q { color: var(--ink); font-weight: 500; font-size: 1.2rem; display: flex; justify-content: space-between; align-items: center; }
-    .faq-a { color: var(--ink-muted); margin-top: 1rem; line-height: 1.6; display: none; }
-    .faq-item.active .faq-a { display: block; }
+    .faq-a { color: var(--ink-muted); line-height: 1.6; max-height: 0; overflow: hidden; opacity: 0; margin-top: 0; transition: max-height 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), margin-top 0.35s ease, opacity 0.35s ease; }
+    .faq-item.active .faq-a { max-height: 150px; opacity: 1; margin-top: 1rem; }
     .faq-item.active .faq-icon { transform: rotate(45deg); transition: transform 0.3s ease; }
     .faq-icon { font-size: 1.5rem; transition: transform 0.3s ease; }
     .contact-form { display: flex; flex-direction: column; gap: 1rem; width: 100%; max-width: 600px; margin: 0 auto; }
-    .contact-input { background: rgba(0,0,0,0.02); border: 1px solid rgba(0,0,0,0.1); padding: 1rem; color: var(--ink); border-radius: 8px; font-family: 'Inter', sans-serif; resize: vertical; }
-    .contact-input:focus { outline: none; border-color: #ea580c; background: rgba(0,0,0,0.05); }
+    .contact-input { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 1rem; color: var(--ink); border-radius: 8px; font-family: 'Inter', sans-serif; resize: vertical; transition: border-color 0.3s, background 0.3s; }
+    .contact-input:focus { outline: none; border-color: #ea580c; background: rgba(255,255,255,0.06); }
     .contact-input::placeholder { color: var(--ink-faint); }
-    .contact-select { appearance: none; background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%230f0f0f%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); background-repeat: no-repeat; background-position: right 1rem top 50%; background-size: 0.65rem auto; }
+    .contact-select { appearance: none; background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); background-repeat: no-repeat; background-position: right 1rem top 50%; background-size: 0.65rem auto; }
   </style>
 
   <!-- SERVICES GRID -->
@@ -311,7 +310,7 @@
   </section>
 
   <!-- BIRTHDAY PARTIES -->
-  <section id="birthday-section" style="background: rgba(0,0,0,0.02); border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05);">
+  <section id="birthday-section" style="background: rgba(255, 255, 255, 0.015); border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
     <div class="new-section flex-split">
       <div>
         <p class="eyebrow">UNFORGETTABLE MEMORIES</p>
@@ -423,7 +422,7 @@
   </section>
 
   <!-- TESTIMONIALS -->
-  <section id="testimonials-section" style="background: rgba(0,0,0,0.02); overflow: hidden;">
+  <section id="testimonials-section" style="background: rgba(255, 255, 255, 0.015); overflow: hidden;">
     <div class="new-section">
       <p class="eyebrow" style="text-align: center;">COMMUNITY FEEDBACK</p>
       <h2 class="section-headline shiny-title dark" style="text-align: center; margin-bottom: 4rem;">WHAT PARENTS<br>ARE SAYING.</h2>
@@ -553,7 +552,7 @@
   </section>
 
   <!-- LOCATIONS & HOURS -->
-  <section id="location-section" style="background: rgba(0,0,0,0.02); border-top: 1px solid rgba(0,0,0,0.05); padding-bottom: 6rem;">
+  <section id="location-section" style="background: rgba(255, 255, 255, 0.015); border-top: 1px solid rgba(255, 255, 255, 0.05); padding-bottom: 6rem;">
     <div class="new-section flex-split">
       <div style="flex: 1;">
         <p class="eyebrow">VISIT US</p>
@@ -574,7 +573,7 @@
           </div>
         </div>
       </div>
-      <div style="flex: 1; border-radius: 2rem; overflow: hidden; height: 400px; background: rgba(0,0,0,0.05);">
+      <div style="flex: 1; border-radius: 2rem; overflow: hidden; height: 400px; background: rgba(255, 255, 255, 0.04);">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.815777839634!2d-73.8687796!3d45.4287413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc93c048bc95c73%3A0xe5a3c0320bb02581!2s3280%20Rue%20Jean-Yves%2C%20Kirkland%2C%20QC%20H9J%202R6!5e0!3m2!1sen!2sca!4v1700000000000!5m2!1sen!2sca" width="100%" height="100%" style="border:0; filter: grayscale(100%) invert(90%) contrast(80%);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
