@@ -1,0 +1,6 @@
+{
+  "name": "Our Basketball Website",
+  "description": "Y68° — Find Your Street Ballers (imported from GitHub)",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

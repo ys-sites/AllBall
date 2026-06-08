@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>Centre AllBall</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+
+  <!-- Global SVG distortion filter -->
+  <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+      <filter id="lg-distort" x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.004 0.008" numOctaves="1" result="turbulence"/>
+        <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="35" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- Noise overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="#hero-section" class="nav-logo">ALLBALL</a>
+    <div class="nav-links">
+      <a href="#hero-section">Play</a>
+      <a href="#stats-section">Leaderboard</a>
+      <a href="#how-section">How it works</a>
+      <a href="#site-footer">About</a>
+    </div>
+    <button class="profile-btn glass-pill">
+      <span class="pulse-dot"></span>
+      My profile
+    </button>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="hero-section" style="position: relative; overflow: hidden; justify-content: center; transform-style: preserve-3d;">
+    <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.65;">
+      <source src="./hero-bg.mp4" type="video/mp4" />
+    </video>
+    <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 100%); z-index: 1;"></div>
+
+    <!-- Product Hunt Badge (Removed for AllBall context) -->
+
+    <!-- Event Card -->
+    <div id="event-card" style="margin-right: auto; margin-left: 2.5rem;">
+      <div class="ec-bend"></div>
+      <div class="ec-face"></div>
+      <div class="ec-edge"></div>
+      <div class="ec-content">
+        <!-- Photo -->
+        <div class="ec-photo">
+          <img
+            src="./player-silhouette.jpg"
+            alt="Basketball court"
+          />
+          <div class="ec-photo-shade"></div>
+          <div class="ec-photo-overlay-top">
+            <span class="ec-pill" style="color: #ea580c;">★ 4.3</span>
+            <span class="ec-pill ec-pill-live">61 reviews</span>
+          </div>
+          <div class="ec-photo-overlay-bottom">
+            <h3 class="ec-title">Centre AllBall</h3>
+            <p class="ec-date">Sports complex</p>
+          </div>
+        </div>
+
+        <!-- Venue Block -->
+        <div class="ec-venue">
+          <span class="ec-venue-name">3280 Jean Yves St</span>
+          <span class="ec-venue-addr">Kirkland, Quebec H9J 4C1</span>
+        </div>
+        
+        <div class="ec-venue" style="border-top: none; padding-top: 0;">
+          <span class="ec-venue-addr">Open today: 9 a.m.–12 a.m.</span>
+        </div>
+
+        <!-- Actions -->
+        <div class="ec-actions">
+          <button class="btn-ghost">Directions</button>
+          <button class="btn-dark">Website</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Text -->
+    <div id="hero-text" style="text-align: left; margin-left: left; max-width: 60%; margin-right: 2.5rem;">
+      <p class="eyebrow" style="color: rgba(255,255,255,0.8); text-shadow: 0 2px 10px rgba(0,0,0,0.8);">TRAINING SESSIONS FOR KIDS</p>
+      <h1 class="hero-headline" style="color: white; mix-blend-mode: normal; text-shadow: 0 8px 30px rgba(0,0,0,0.8); line-height: 1;">
+        <span class="hl-line shiny-title light">KIRKLAND'S</span>
+        <span class="hl-line shiny-title light">PREMIER</span>
+        <span class="hl-line shiny-title light">COURT</span>
+      </h1>
+      <p class="hero-brand" style="color: rgba(255,255,255,0.9); text-shadow: 0 2px 10px rgba(0,0,0,0.8);">CENTRE ALLBALL</p>
+      <div class="pricing-strip glass-pill" style="background: rgba(255,255,255,0.9);">
+        <span class="pricing-text">Ready to play?</span>
+        <button class="btn-dark-sm" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Book a Court →</button>
+      </div>
+    </div>
+
+    <!-- Signature SVG -->
+    <div id="sig-wrap">
+      <svg class="signature-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="sp1" d="M10,60 C30,10 60,70 90,30 C110,5 130,55 160,25" stroke="#0f0f0f" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <path class="sp2" d="M20,70 C50,40 80,65 120,45 C145,32 165,50 190,35" stroke="#0f0f0f" stroke-width="1" stroke-linecap="round" fill="none"/>
+        <path class="sp3" d="M15,75 Q60,55 100,65 Q140,75 185,60" stroke="#0f0f0f" stroke-width="0.8" stroke-linecap="round" fill="none"/>
+      </svg>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span class="scroll-text">scroll</span>
+    </div>
+
+    <!-- Drag hint removed from hero -->
+
+    <!-- Nav arrow -->
+    <button id="nav-arrow" class="glass-pill nav-arrow-btn">›</button>
+
+  </section>
+
+  <!-- STATS SECTION -->
+  <section id="stats-section" style="position: relative;">
+    <!-- CANVAS REPOSITIONED HERE -->
+    <canvas id="ball-canvas"></canvas>
+    
+    <!-- Drag hint -->
+    <div class="drag-hint" style="bottom: 2rem; color: var(--ink-faint);">↔ drag to spin</div>
+    
+    <div class="stats-bg-text">COURT</div>
+    <div class="stats-left" style="pointer-events: none;">
+      <p class="eyebrow">OUR IMPACT</p>
+      <h2 class="section-headline shiny-title dark">ELEVATE<br>THEIR GAME.</h2>
+      <p class="section-body">Kirkland's premier destination for youth basketball training and development. We focus on fundamentals, teamwork, and love for the game.</p>
+      <div class="stats-grid">
+        <div class="stat-card glass-card">
+          <span class="stat-num">500+</span>
+          <span class="stat-label">Youth Players</span>
+          <span class="stat-delta delta-up">↑ Growing community</span>
+        </div>
+        <div class="stat-card glass-card">
+          <span class="stat-num">4.3★</span>
+          <span class="stat-label">Google Reviews</span>
+          <span class="stat-delta delta-up">↑ 61 happy parents</span>
+        </div>
+        <div class="stat-card glass-card">
+          <span class="stat-num">15+</span>
+          <span class="stat-label">Expert Coaches</span>
+          <span class="stat-delta delta-neutral">→ Elite experience</span>
+        </div>
+        <div class="stat-card glass-card">
+          <span class="stat-num">7 Days</span>
+          <span class="stat-label">Open A Week</span>
+          <span class="stat-delta delta-up">↑ Flexible scheduling</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS SECTION -->
+  <section id="how-section">
+    <div class="how-bg-text" style="display: none;">PLAY</div>
+
+    <!-- LEFT HAND SIDE POSTER -->
+    <div class="poster-graphic" style="position: relative; container-type: inline-size; background-image: url('./poster-bg.jpg'); background-size: cover; background-blend-mode: screen; background-color: #e6e6e6; width: 100%; max-width: 480px; border-radius: 6px; aspect-ratio: 4/5; overflow: hidden; color: #111; box-shadow: 0 30px 60px rgba(0,0,0,0.1); flex: 1; align-self: center;">
+      
+      <!-- Top Title -->
+      <div style="position: absolute; top: 8%; left: 0; width: 100%; text-align: center; font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 16cqw, 7rem); line-height: 0.8; letter-spacing: 0.02em; display: flex; justify-content: center; align-items: flex-start; z-index: 10;">
+        AB<span style="display: inline-block; width: 0.4em; height: 1.8em; border: 0.12em solid #111; border-radius: 1em; margin: 0 0.05em; transform: translateY(0.1em);"></span>VE THE RIM
+      </div>
+      
+      <!-- Top Meta Info -->
+      <div style="position: absolute; top: 20%; left: 8%; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; z-index: 10;">
+        ENERGY<br><span style="font-size: 1rem; letter-spacing: 0.2em; font-weight: 300;">❋❋❋</span>
+      </div>
+      <div style="position: absolute; top: 20%; left: 50%; transform: translateX(-50%); font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; z-index: 10;">
+        00:08:42
+      </div>
+      <div style="position: absolute; top: 20%; right: 8%; text-align: right; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; z-index: 10;">
+        FOCUS<br><span style="font-size: 1rem; letter-spacing: 0.1em; font-weight: 300;">○○○</span>
+      </div>
+
+      <!-- Vertical left text -->
+      <div style="position: absolute; top: 50%; left: 4%; transform: translateY(-50%) rotate(-90deg); transform-origin: left center; font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5em; z-index: 10; white-space: nowrap;">
+        R I S E —
+      </div>
+
+      <!-- Vertical right text -->
+      <div style="position: absolute; top: 50%; right: -12%; transform: translateY(-50%) rotate(90deg); transform-origin: left center; font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; z-index: 10; display: flex; align-items: center; gap: 0.5rem; white-space: nowrap;">
+        <div style="width: 10px; height: 10px; background: #111;"></div>
+        ELEVATE
+        <div style="display: flex; gap: 2px;">
+          <div style="width: 2px; height: 12px; background: #111;"></div><div style="width: 2px; height: 12px; background: #111;"></div><div style="width: 2px; height: 12px; background: #111;"></div><div style="width: 2px; height: 12px; background: #111;"></div><div style="width: 2px; height: 12px; background: #111;"></div><div style="width: 2px; height: 12px; background: #111;"></div>
+        </div>
+      </div>
+
+      <!-- Bottom text -->
+      <div style="position: absolute; bottom: 5%; left: 8%; font-family: 'Inter', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.05em; max-width: 80%; z-index: 10; line-height: 1.4;">
+        <div style="display: flex; gap: 4px; margin-bottom: 0.5rem;">
+          <div style="width: 10px; height: 10px; background: #111; border-radius: 50%;"></div>
+          <div style="width: 10px; height: 10px; background: #111; border-radius: 50%;"></div>
+          <div style="width: 10px; height: 10px; background: #111; border-radius: 50%; clip-path: inset(0 50% 0 0);"></div>
+          <div style="width: 10px; height: 10px; border: 1.5px solid #111; border-radius: 50%;"></div>
+        </div>
+        WHERE GRAVITY ENDS, AMBITION BEGINS.<br>
+        EVERY JUMP IS NOT JUST MOVEMENT —<br>
+        IT'S DEFIANCE, FLIGHT, AND DREAM.
+      </div>
+      
+      <!-- Player Silhouette -->
+      <img src="./player-silhouette.jpg" style="position: absolute; top: 15%; left: 50%; transform: translateX(-50%); width: 140%; height: 140%; object-fit: contain; filter: grayscale(100%) contrast(200%) brightness(0%); mix-blend-mode: multiply; z-index: 5; pointer-events: none;" alt="Basketball player silhouette" />
+    </div>
+
+    <div class="how-content" style="flex: 1;">
+      <p class="eyebrow">HOW IT WORKS</p>
+      <h2 class="section-headline shiny-title dark">THREE STEPS<br>TO THE COURT</h2>
+      <div class="steps-list">
+        <div class="step-item glass-card">
+          <span class="step-num">01</span>
+          <div class="step-info">
+            <h3 class="step-title">Pick a Service</h3>
+            <p class="step-desc">Whether it's a birthday party, training clinic, or casual drop-in, choose what fits your game today.</p>
+          </div>
+          <span class="step-arrow">→</span>
+        </div>
+        <div class="step-item glass-card">
+          <span class="step-num">02</span>
+          <div class="step-info">
+            <h3 class="step-title">Choose a Time</h3>
+            <p class="step-desc">Browse our live schedule and secure your slot instantly. No phone tag, no hassle.</p>
+          </div>
+          <span class="step-arrow">→</span>
+        </div>
+        <div class="step-item glass-card">
+          <span class="step-num">03</span>
+          <div class="step-info">
+            <h3 class="step-title">Show Up & Play</h3>
+            <p class="step-desc">Bring your gear and your A-game. Our courts are prepped and ready for you when you walk in.</p>
+          </div>
+          <span class="step-arrow">→</span>
+        </div>
+      </div>
+      <div class="how-cta-row">
+        <button class="btn-dark-lg" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Book Now →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADDED SECTIONS -->
+  <style>
+    body { padding-bottom: 90px; }
+    .new-section { padding: 8rem 2.5rem; position: relative; max-width: 1200px; margin: 0 auto; }
+    .grid-auto { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .flex-split { display: flex; flex-direction: column; gap: 4rem; align-items: center; }
+    @media(min-width: 768px) {
+      .flex-split { flex-direction: row; }
+      .flex-split > * { flex: 1; }
+    }
+    @media(max-width: 1024px) {
+      #how-section .poster-graphic { margin-bottom: 3rem; }
+    }
+    .tier-card { display: flex; flex-direction: column; gap: 1rem; padding: 2.5rem; }
+    .tier-price { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; line-height: 1; color: var(--ink); }
+    .tier-list { list-style: none; padding: 0; margin: 1.5rem 0; display: flex; flex-direction: column; gap: 0.8rem; color: var(--ink-faint); }
+    .tier-list li { display: flex; gap: 0.5rem; align-items: flex-start; }
+    .faq-item { border-bottom: 1px solid rgba(0,0,0,0.1); padding: 1.5rem 0; cursor: pointer; }
+    .faq-q { color: var(--ink); font-weight: 500; font-size: 1.2rem; display: flex; justify-content: space-between; align-items: center; }
+    .faq-a { color: var(--ink-muted); margin-top: 1rem; line-height: 1.6; display: none; }
+    .faq-item.active .faq-a { display: block; }
+    .faq-item.active .faq-icon { transform: rotate(45deg); transition: transform 0.3s ease; }
+    .faq-icon { font-size: 1.5rem; transition: transform 0.3s ease; }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; width: 100%; max-width: 600px; margin: 0 auto; }
+    .contact-input { background: rgba(0,0,0,0.02); border: 1px solid rgba(0,0,0,0.1); padding: 1rem; color: var(--ink); border-radius: 8px; font-family: 'Inter', sans-serif; resize: vertical; }
+    .contact-input:focus { outline: none; border-color: #ea580c; background: rgba(0,0,0,0.05); }
+    .contact-input::placeholder { color: var(--ink-faint); }
+    .contact-select { appearance: none; background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%230f0f0f%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); background-repeat: no-repeat; background-position: right 1rem top 50%; background-size: 0.65rem auto; }
+  </style>
+
+  <!-- SERVICES GRID -->
+  <section id="services-section" class="new-section">
+    <p class="eyebrow" style="text-align: center;">OUR OFFERINGS</p>
+    <h2 class="section-headline shiny-title dark" style="text-align: center; margin-bottom: 4rem;">PROGRAMS &<br>RENTALS.</h2>
+    <div class="grid-auto">
+      <div class="glass-card tier-card">
+        <h3 class="shiny-title dark" style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--ink);">Drop-in Play</h3>
+        <p style="color: var(--ink-faint); flex-grow: 1;">Show up, shoot around, or run 5v5s. Perfect for casual players looking for high-quality hardwood.</p>
+        <button class="btn-ghost" style="align-self: flex-start;" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">See Hours</button>
+      </div>
+      <div class="glass-card tier-card">
+        <h3 class="shiny-title dark" style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--ink);">Kids Clinics</h3>
+        <p style="color: var(--ink-faint); flex-grow: 1;">Structured group training focusing on basketball fundamentals for ages 6-14.</p>
+        <button class="btn-ghost" style="align-self: flex-start;" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">View Schedule</button>
+      </div>
+      <div class="glass-card tier-card">
+        <h3 class="shiny-title dark" style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--ink);">Private Training</h3>
+        <p style="color: var(--ink-faint); flex-grow: 1;">1-on-1 coaching for accelerated skill development, tailored specifically to your game.</p>
+        <button class="btn-ghost" style="align-self: flex-start;" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Find a Coach</button>
+      </div>
+      <div class="glass-card tier-card" style="grid-column: 1 / -1; max-width: 800px; margin: 0 auto; width: 100%;">
+        <h3 class="shiny-title dark" style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--ink);">Team Rentals</h3>
+        <p style="color: var(--ink-faint);">Need a consistent court for your squad? Rent standard or full-sized courts for team practices and scrimmages.</p>
+        <button class="btn-ghost" style="align-self: flex-start;" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Inquire Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIRTHDAY PARTIES -->
+  <section id="birthday-section" style="background: rgba(0,0,0,0.02); border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05);">
+    <div class="new-section flex-split">
+      <div>
+        <p class="eyebrow">UNFORGETTABLE MEMORIES</p>
+        <h2 class="section-headline shiny-title dark" style="font-size: clamp(3rem, 8vw, 5rem);">BIRTHDAY<br>PARTIES.</h2>
+        <p class="section-body">Celebrate their big day on the court. Our party packages take care of everything so you can actually enjoy the moment.</p>
+        <ul class="tier-list" style="color: var(--ink); font-size: 1.1rem; margin-bottom: 3rem;">
+          <li><span style="color: #ea580c;">✓</span> 90 Minutes of Court Time</li>
+          <li><span style="color: #ea580c;">✓</span> Private Party Room</li>
+          <li><span style="color: #ea580c;">✓</span> Dedicated Party Host/Ref</li>
+          <li><span style="color: #ea580c;">✓</span> Setup & Clean up included</li>
+        </ul>
+        <button class="btn-dark-lg" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Inquire About Dates →</button>
+      </div>
+      <div style="position: relative; border-radius: 2rem; overflow: hidden; aspect-ratio: 4/5; width: 100%; max-width: 500px;">
+        <img src="./kids-playing.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Kids playing basketball" />
+        <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
+        <div class="glass-pill" style="position: absolute; bottom: 2rem; left: 2rem; right: 2rem; padding: 1rem; background: rgba(0,0,0,0.5); backdrop-filter: blur(10px);">
+          <span style="color: white; font-weight: bold; font-style: italic;">"The easiest party we've ever hosted!"</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KIDS PROGRAMS & COACHES -->
+  <section id="kids-section" class="new-section">
+    <p class="eyebrow" style="text-align: center;">EXPERT GUIDANCE</p>
+    <h2 class="section-headline shiny-title dark" style="text-align: center; margin-bottom: 4rem;">KIDS PROGRAMS &<br>COACHES.</h2>
+    <div style="display: flex; flex-direction: column; gap: 4rem;">
+      <div class="glass-card" style="padding: 2.5rem; display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; justify-content: space-between;">
+        <div style="flex: 1; min-width: 280px;">
+          <h3 class="shiny-title dark" style="font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--ink); margin-bottom: 1rem;">Age Groups & Schedule</h3>
+          <p style="color: var(--ink-faint); margin-bottom: 1rem;">Our clinics run every weekend, tailored specifically for different age groups to ensure maximum engagement and appropriate skill building.</p>
+          <ul style="color: var(--ink); list-style: none; padding: 0; line-height: 2;">
+            <li><strong>Ages 6 - 8:</strong> Sat & Sun • 9:00 AM - 10:30 AM</li>
+            <li><strong>Ages 9 - 11:</strong> Sat & Sun • 11:00 AM - 12:30 PM</li>
+            <li><strong>Ages 12 - 14:</strong> Sat & Sun • 1:00 PM - 2:30 PM</li>
+          </ul>
+        </div>
+        <div style="flex: 1; min-width: 280px; display: flex; justify-content: flex-end;">
+           <button class="btn-dark-lg" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Register for Next Session →</button>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="shiny-title dark" style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--ink); text-align: center; margin-bottom: 2rem;">Meet The Coaches</h3>
+        <div class="grid-auto">
+          <div class="glass-card" style="padding: 2rem; text-align: center;">
+            <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin: 0 auto 1.5rem auto; border: 2px solid #ea580c;">
+               <img src="./coach-james.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Coach James"/>
+            </div>
+            <h4 style="color: var(--ink); font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem;">Coach James</h4>
+            <p style="color: #ea580c; font-size: 0.9rem; font-weight: bold; margin-bottom: 1rem;">Head of Youth Development</p>
+            <p style="color: var(--ink-faint); font-size: 0.95rem; line-height: 1.5;">Former D1 point guard with 8+ years of experience training young athletes in shooting mechanics and court vision.</p>
+          </div>
+          <div class="glass-card" style="padding: 2rem; text-align: center;">
+            <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin: 0 auto 1.5rem auto; border: 2px solid #ea580c;">
+               <img src="./coach-sarah.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Coach Sarah"/>
+            </div>
+            <h4 style="color: var(--ink); font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem;">Coach Sarah</h4>
+            <p style="color: #ea580c; font-size: 0.9rem; font-weight: bold; margin-bottom: 1rem;">Fundamentals Specialist</p>
+            <p style="color: var(--ink-faint); font-size: 0.95rem; line-height: 1.5;">Focuses on the 6-11 age groups, teaching correct defensive stance, footwork, and instilling a love for the game.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing-section" class="new-section">
+    <p class="eyebrow" style="text-align: center;">SIMPLE, TRANSPARENT</p>
+    <h2 class="section-headline shiny-title dark" style="text-align: center; margin-bottom: 4rem;">MEMBERSHIPS &<br>PASSES.</h2>
+    <div class="grid-auto">
+      <div class="glass-card tier-card">
+        <h3 class="shiny-title dark" style="color: var(--ink); font-size: 1.2rem; font-weight: 500;">Drop-in Pass</h3>
+        <div class="tier-price">$20<span style="font-size: 1rem; font-family: 'Inter', sans-serif; color: var(--ink-faint);"> / visit</span></div>
+        <p style="color: var(--ink-faint);">Perfect for occasional visits.</p>
+        <ul class="tier-list">
+          <li><span>•</span> Full day facility access</li>
+          <li><span>•</span> Access to pickup games</li>
+          <li><span>•</span> Bring your own ball</li>
+        </ul>
+        <button class="btn-ghost" style="margin-top: auto;" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Buy Pass</button>
+      </div>
+      <div class="glass-card tier-card" style="border: 1px solid #ea580c; position: relative;">
+        <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #ea580c; color: white; font-size: 0.8rem; font-weight: bold; padding: 2px 12px; border-radius: 12px; text-transform: uppercase;">Most Popular</div>
+        <h3 class="shiny-title dark" style="color: var(--ink); font-size: 1.2rem; font-weight: 500;">Monthly Member</h3>
+        <div class="tier-price">$90<span style="font-size: 1rem; font-family: 'Inter', sans-serif; color: var(--ink-faint);"> / mo</span></div>
+        <p style="color: var(--ink-faint);">For the dedicated baller.</p>
+        <ul class="tier-list">
+          <li><span style="color: #ea580c;">•</span> Unlimited drop-in play</li>
+          <li><span style="color: #ea580c;">•</span> 10% off clinics & camps</li>
+          <li><span style="color: #ea580c;">•</span> Advanced court booking</li>
+          <li><span style="color: #ea580c;">•</span> Free locker usage</li>
+        </ul>
+        <button class="btn-dark" style="margin-top: auto;" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Become a Member</button>
+      </div>
+      <div class="glass-card tier-card">
+        <h3 class="shiny-title dark" style="color: var(--ink); font-size: 1.2rem; font-weight: 500;">Court Rental</h3>
+        <div class="tier-price">$120<span style="font-size: 1rem; font-family: 'Inter', sans-serif; color: var(--ink-faint);"> / hr</span></div>
+        <p style="color: var(--ink-faint);">Your court, your rules.</p>
+        <ul class="tier-list">
+          <li><span>•</span> Full hardwood court</li>
+          <li><span>•</span> Scoreboard access</li>
+          <li><span>•</span> Up to 15 players</li>
+        </ul>
+        <button class="btn-ghost" style="margin-top: auto;" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Book Court</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials-section" style="background: rgba(0,0,0,0.02); overflow: hidden;">
+    <div class="new-section">
+      <p class="eyebrow" style="text-align: center;">COMMUNITY FEEDBACK</p>
+      <h2 class="section-headline shiny-title dark" style="text-align: center; margin-bottom: 4rem;">WHAT PARENTS<br>ARE SAYING.</h2>
+      <div class="grid-auto">
+        <div class="glass-card" style="padding: 2.5rem;">
+          <div style="color: #ea580c; font-size: 1.5rem; margin-bottom: 1rem;">★★★★★</div>
+          <p style="color: var(--ink); font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem;">"We hosted our son's 10th birthday here and it was incredible. The coach kept the kids engaged the whole time, and the pizza room was perfectly set up. Easiest party ever."</p>
+          <div style="color: var(--ink-faint); font-weight: 500;">— Sarah T., Kirkland</div>
+        </div>
+        <div class="glass-card" style="padding: 2.5rem;">
+          <div style="color: #ea580c; font-size: 1.5rem; margin-bottom: 1rem;">★★★★★</div>
+          <p style="color: var(--ink); font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem;">"The weekend clinics have transformed my daughter's confidence. The coaches really focus on fundamentals instead of just letting them scrimmage. Highly recommend!"</p>
+          <div style="color: var(--ink-faint); font-weight: 500;">— David M., Pointe-Claire</div>
+        </div>
+        <div class="glass-card" style="padding: 2.5rem;">
+          <div style="color: #ea580c; font-size: 1.5rem; margin-bottom: 1rem;">★★★★★</div>
+          <p style="color: var(--ink); font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem;">"Finally a premium, clean, well-lit facility on the West Island. My teenager Practically lives here on the weekends for drop-in play. The staff is always friendly."</p>
+          <div style="color: var(--ink-faint); font-weight: 500;">— Elena R., DDO</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq-section" class="new-section">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <p class="eyebrow" style="text-align: center;">HAVE QUESTIONS?</p>
+      <h2 class="section-headline shiny-title dark" style="text-align: center; margin-bottom: 4rem;">FAQ.</h2>
+      <div class="faq-list">
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+          <div class="faq-q">Do I need to book in advance for drop-in? <span class="faq-icon">+</span></div>
+          <div class="faq-a">While walk-ins are welcome, we highly recommend booking your pass online to guarantee entry, as we frequently reach capacity on weekends.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+          <div class="faq-q">What age are the kids clinics for? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Our weekend clinics are separated by age groups: 6-8, 9-11, and 12-14. We adjust the hoop height and basketball sizes accordingly.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+          <div class="faq-q">Can we bring outside food for birthday parties? <span class="faq-icon">+</span></div>
+          <div class="faq-a">Yes! You are welcome to bring your own cake and snacks for the party room. We also offer catering add-ons if you prefer us to handle the pizza and drinks.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+          <div class="faq-q">Are basketballs provided? <span class="faq-icon">+</span></div>
+          <div class="faq-a">We provide basketballs for all clinics and parties. For drop-in play or court rentals, we ask that you bring your own, though we do have limited rentals available at the front desk.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact-section" class="new-section">
+    <p class="eyebrow" style="text-align: center;">GET IN TOUCH</p>
+    <h2 class="section-headline shiny-title dark" style="text-align: center; margin-bottom: 2rem;">BOOK A COURT<br>OR INQUIRE.</h2>
+    <p class="section-body" style="text-align: center; max-width: 600px; margin: 0 auto 3rem auto;">Ready to play? Fill out the form below and our team will get back to you shortly to confirm your booking.</p>
+    
+    <div class="glass-card" style="padding: 3rem 2rem; max-width: 700px; margin: 0 auto;">
+      <form id="contact-form" class="contact-form" onsubmit="submitForm(event)">
+        <!-- Next configuration (disable captcha, set redirect page back to same, or leave it) -->
+        <input type="hidden" name="_subject" value="New Inquiry from Centre AllBall Website!">
+        <input type="hidden" name="_captcha" value="false">
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <input type="text" name="Name" class="contact-input" placeholder="Full Name" required />
+          <input type="tel" name="Phone" class="contact-input" placeholder="Phone Number" required />
+        </div>
+        
+        <input type="email" name="Email" class="contact-input" placeholder="Email Address" required />
+        
+        <select name="Event_Type" class="contact-input contact-select" required>
+          <option value="" disabled selected>Type of Event / Purpose</option>
+          <option value="Court Rental">Court Rental</option>
+          <option value="Kids Clinic Registration">Kids Clinic Registration</option>
+          <option value="Birthday Party Inquiry">Birthday Party Inquiry</option>
+          <option value="Private Training">Private Training</option>
+          <option value="General Question">General Question</option>
+        </select>
+        
+        <textarea name="Comments" class="contact-input" placeholder="Additional Comments (Optional)" rows="4"></textarea>
+        
+        <button id="submit-btn" type="submit" class="btn-dark-lg" style="margin-top: 1rem; width: 100%;">Submit Inquiry →</button>
+        <p id="submit-msg" style="color: #ea580c; display: none; text-align: center; margin-top: 1rem;"></p>
+      </form>
+
+      <script>
+        function submitForm(e) {
+          e.preventDefault();
+          const form = e.target;
+          const btn = document.getElementById('submit-btn');
+          const msg = document.getElementById('submit-msg');
+          
+          btn.innerText = 'Sending...';
+          btn.disabled = true;
+
+          const formData = new FormData(form);
+
+          fetch("https://formsubmit.co/ajax/sharafath2001@hotmail.com", {
+              method: "POST",
+              headers: { 
+                  'Accept': 'application/json'
+              },
+              body: formData
+          })
+          .then(response => response.json())
+          .then(data => {
+              if (data.success) {
+                  msg.innerText = "Thanks! Your inquiry has been sent.";
+                  msg.style.color = "#16a34a"; // Green for success
+                  msg.style.display = "block";
+                  form.reset();
+              } else {
+                  msg.innerText = "Please check your email to activate the form first! (FormSubmit requirement)";
+                  msg.style.color = "#ea580c";
+                  msg.style.display = "block";
+              }
+              btn.innerText = 'Submit Inquiry →';
+              btn.disabled = false;
+          })
+          .catch(error => {
+              msg.innerText = "There was an error sending the form. Please try again.";
+              msg.style.display = "block";
+              btn.innerText = 'Submit Inquiry →';
+              btn.disabled = false;
+          });
+        }
+      </script>
+    </div>
+  </section>
+
+  <!-- LOCATIONS & HOURS -->
+  <section id="location-section" style="background: rgba(0,0,0,0.02); border-top: 1px solid rgba(0,0,0,0.05); padding-bottom: 6rem;">
+    <div class="new-section flex-split">
+      <div style="flex: 1;">
+        <p class="eyebrow">VISIT US</p>
+        <h2 class="section-headline shiny-title dark">HOURS &<br>LOCATION.</h2>
+        <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 2rem;">
+          <div>
+            <h4 style="color: var(--ink); font-size: 1.2rem; margin-bottom: 0.5rem; font-weight: 600;">Address</h4>
+            <p style="color: var(--ink-faint); line-height: 1.6;">3280 Jean Yves St<br>Kirkland, Quebec H9J 4C1</p>
+          </div>
+          <div>
+            <h4 style="color: var(--ink); font-size: 1.2rem; margin-bottom: 0.5rem; font-weight: 600;">Standard Hours</h4>
+            <ul style="color: var(--ink-faint); line-height: 1.8; list-style: none; padding: 0;">
+              <li style="display: flex; justify-content: space-between; max-width: 300px;"><span>Mon - Thu</span> <span>9 a.m. - 12 a.m.</span></li>
+              <li style="display: flex; justify-content: space-between; max-width: 300px;"><span>Friday</span> <span>11:30 a.m. - 3 a.m.</span></li>
+              <li style="display: flex; justify-content: space-between; max-width: 300px;"><span>Saturday</span> <span>10:30 a.m. - 2:15 a.m.</span></li>
+              <li style="display: flex; justify-content: space-between; max-width: 300px;"><span>Sunday</span> <span>9 a.m. - 12 a.m.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div style="flex: 1; border-radius: 2rem; overflow: hidden; height: 400px; background: rgba(0,0,0,0.05);">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.815777839634!2d-73.8687796!3d45.4287413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc93c048bc95c73%3A0xe5a3c0320bb02581!2s3280%20Rue%20Jean-Yves%2C%20Kirkland%2C%20QC%20H9J%202R6!5e0!3m2!1sen!2sca!4v1700000000000!5m2!1sen!2sca" width="100%" height="100%" style="border:0; filter: grayscale(100%) invert(90%) contrast(80%);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="site-footer">
+    <div class="footer-bg-ball"></div>
+    <div class="footer-inner">
+
+      <!-- Footer top -->
+      <div class="footer-top">
+
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+          <div class="footer-logo">ALLBALL</div>
+          <p class="footer-tagline">Kirkland's finest sports complex for youth basketball training and development.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-pill glass-pill">Facebook</a>
+            <a href="#" class="social-pill glass-pill">Instagram</a>
+          </div>
+        </div>
+
+        <!-- Column 2: Links -->
+        <div class="footer-links-grid">
+          <div class="footer-link-col">
+            <span class="footer-col-title">Programs</span>
+            <a href="#">Youth Training</a>
+            <a href="#">Summer Camps</a>
+            <a href="#">Private Coaching</a>
+            <a href="#">Court Rentals</a>
+          </div>
+          <div class="footer-link-col">
+            <span class="footer-col-title">About Us</span>
+            <a href="#">Our Coaches</a>
+            <a href="#">Facility Info</a>
+            <a href="#">Testimonials</a>
+            <a href="#">Careers</a>
+          </div>
+          <div class="footer-link-col">
+            <span class="footer-col-title">Contact</span>
+            <a href="#">Directions</a>
+            <a href="#">Email Us</a>
+            <a href="#">Call Center</a>
+            <a href="#">FAQ</a>
+          </div>
+        </div>
+
+        <!-- Column 3: Newsletter -->
+        <div class="footer-newsletter glass-dark">
+          <h4 class="newsletter-title">Subscribe to updates</h4>
+          <p class="newsletter-desc">Get the latest news on camp registrations and open court availability.</p>
+          <div class="newsletter-form">
+            <input class="newsletter-input" type="email" placeholder="your@email.com" />
+            <button class="newsletter-btn">→</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          <span>© 2026 Centre AllBall. All rights reserved.</span>
+          <span class="footer-legal">
+            <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Cookies</a>
+          </span>
+        </div>
+        <div class="footer-ticker-wrap">
+          <div class="footer-ticker">
+            <span>KIRKLAND · WEST ISLAND · MONTREAL · DOLLARD-DES-ORMEAUX · POINTE-CLAIRE · </span>
+            <span>KIRKLAND · WEST ISLAND · MONTREAL · DOLLARD-DES-ORMEAUX · POINTE-CLAIRE · </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+
+  <!-- Sticky CTA Bar -->
+  <div class="sticky-cta-bar glass-dark" style="position: fixed; bottom: 0; left: 0; width: 100%; padding: 1rem; z-index: 100; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.1);">
+    <div style="display: flex; flex-direction: column;">
+      <span style="color: white; font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; line-height: 1;">CENTRE ALLBALL</span>
+      <span style="color: var(--ink-faint); font-size: 0.8rem;">Kirkland's Premier Court</span>
+    </div>
+    <button class="btn-dark-sm" style="background: #ea580c; color: white;" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Book Now →</button>
+  </div>
+</body>
+</html>
