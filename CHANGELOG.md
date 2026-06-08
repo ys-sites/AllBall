@@ -2,6 +2,19 @@
 
 All notable changes to the Centre AllBall website will be documented in this file.
 
+## [1.1.1] - 2026-06-08
+
+### Added
+- Generated and integrated professional, high-resolution portrait headshots for Coach James (`coach-james.png`) and Coach Sarah (`coach-sarah.png`).
+- Generated and integrated a vibrant, high-resolution action photograph for the birthday section (`kids-playing.png`).
+
+### Changed
+- Refactored `BALL.jpg` inside `.poster-graphic` to act as a full-bleed backdrop cover layer with hover parallax scaling transitions, while updating poster typography to high-contrast white.
+- Balanced the desktop footer layout to a 2-column grid (`1.2fr 2fr`) following the newsletter removal.
+
+### Removed
+- Removed the newsletter subscription card (`.footer-newsletter`) from the footer per user request.
+
 ## [1.1.0] - 2026-06-08
 
 ### Added
