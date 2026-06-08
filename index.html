@@ -39,16 +39,16 @@
   </nav>
 
   <!-- HERO SECTION -->
-  <section id="hero-section" style="position: relative; overflow: hidden; justify-content: center; transform-style: preserve-3d;">
+  <section id="hero-section" style="position: relative; overflow: hidden;">
     <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.65;">
       <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/so_3,eo_38/YTDown_YouTube_Cinematic-Sports-Video-Basketball-Shoot-_Media_tWU8CXFLOgk_001_1080p_mdimk2.mp4" type="video/mp4" />
     </video>
-    <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 100%); z-index: 1;"></div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(to left, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 100%); z-index: 1;"></div>
 
     <!-- Product Hunt Badge (Removed for AllBall context) -->
 
     <!-- Event Card -->
-    <div id="event-card" style="margin-right: auto; margin-left: 2.5rem;">
+    <div id="event-card">
       <div class="ec-bend"></div>
       <div class="ec-face"></div>
       <div class="ec-edge"></div>
@@ -56,7 +56,7 @@
         <!-- Photo -->
         <div class="ec-photo">
           <img
-            src="./player-silhouette.jpg"
+            src="/player-silhouette.jpg"
             alt="Basketball court"
           />
           <div class="ec-photo-shade"></div>
@@ -89,7 +89,7 @@
     </div>
 
     <!-- Hero Text -->
-    <div id="hero-text" style="text-align: left; margin-left: left; max-width: 60%; margin-right: 2.5rem;">
+    <div id="hero-text">
       <p class="eyebrow" style="color: rgba(255,255,255,0.8); text-shadow: 0 2px 10px rgba(0,0,0,0.8);">TRAINING SESSIONS FOR KIDS</p>
       <h1 class="hero-headline" style="color: white; mix-blend-mode: normal; text-shadow: 0 8px 30px rgba(0,0,0,0.8); line-height: 1;">
         <span class="hl-line shiny-title light">KIRKLAND'S</span>
@@ -168,7 +168,7 @@
     <div class="how-bg-text" style="display: none;">PLAY</div>
 
     <!-- LEFT HAND SIDE POSTER -->
-    <div class="poster-graphic" style="position: relative; container-type: inline-size; background-image: url('./poster-bg.jpg'); background-size: cover; background-blend-mode: screen; background-color: #e6e6e6; width: 100%; max-width: 480px; border-radius: 6px; aspect-ratio: 4/5; overflow: hidden; color: #111; box-shadow: 0 30px 60px rgba(0,0,0,0.1); flex: 1; align-self: center;">
+    <div class="poster-graphic" style="position: relative; container-type: inline-size; background-image: url('/poster-bg.jpg'); background-size: cover; background-blend-mode: screen; background-color: #e6e6e6; width: 100%; max-width: 480px; border-radius: 6px; aspect-ratio: 4/5; overflow: hidden; color: #111; box-shadow: 0 30px 60px rgba(0,0,0,0.1); flex: 1; align-self: center;">
       
       <!-- Top Title -->
       <div style="position: absolute; top: 8%; left: 0; width: 100%; text-align: center; font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 16cqw, 7rem); line-height: 0.8; letter-spacing: 0.02em; display: flex; justify-content: center; align-items: flex-start; z-index: 10;">
@@ -214,7 +214,7 @@
       </div>
       
       <!-- Player Silhouette -->
-      <img src="./player-silhouette.jpg" style="position: absolute; top: 15%; left: 50%; transform: translateX(-50%); width: 140%; height: 140%; object-fit: contain; filter: grayscale(100%) contrast(200%) brightness(0%); mix-blend-mode: multiply; z-index: 5; pointer-events: none;" alt="Basketball player silhouette" />
+      <img src="/player-silhouette.jpg" style="position: absolute; top: 15%; left: 50%; transform: translateX(-50%); width: 140%; height: 140%; object-fit: contain; filter: grayscale(100%) contrast(200%) brightness(0%); mix-blend-mode: multiply; z-index: 5; pointer-events: none;" alt="Basketball player silhouette" />
     </div>
 
     <div class="how-content" style="flex: 1;">
@@ -268,17 +268,17 @@
     .tier-price { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; line-height: 1; color: var(--ink); }
     .tier-list { list-style: none; padding: 0; margin: 1.5rem 0; display: flex; flex-direction: column; gap: 0.8rem; color: var(--ink-faint); }
     .tier-list li { display: flex; gap: 0.5rem; align-items: flex-start; }
-    .faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); padding: 1.5rem 0; cursor: pointer; }
+    .faq-item { border-bottom: 1px solid rgba(0,0,0,0.08); padding: 1.5rem 0; cursor: pointer; }
     .faq-q { color: var(--ink); font-weight: 500; font-size: 1.2rem; display: flex; justify-content: space-between; align-items: center; }
     .faq-a { color: var(--ink-muted); line-height: 1.6; max-height: 0; overflow: hidden; opacity: 0; margin-top: 0; transition: max-height 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), margin-top 0.35s ease, opacity 0.35s ease; }
     .faq-item.active .faq-a { max-height: 150px; opacity: 1; margin-top: 1rem; }
     .faq-item.active .faq-icon { transform: rotate(45deg); transition: transform 0.3s ease; }
     .faq-icon { font-size: 1.5rem; transition: transform 0.3s ease; }
     .contact-form { display: flex; flex-direction: column; gap: 1rem; width: 100%; max-width: 600px; margin: 0 auto; }
-    .contact-input { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 1rem; color: var(--ink); border-radius: 8px; font-family: 'Inter', sans-serif; resize: vertical; transition: border-color 0.3s, background 0.3s; }
-    .contact-input:focus { outline: none; border-color: #ea580c; background: rgba(255,255,255,0.06); }
+    .contact-input { background: rgba(0,0,0,0.02); border: 1px solid rgba(0,0,0,0.12); padding: 1rem; color: var(--ink); border-radius: 8px; font-family: 'Inter', sans-serif; resize: vertical; transition: border-color 0.3s, background 0.3s; }
+    .contact-input:focus { outline: none; border-color: #ea580c; background: rgba(0,0,0,0.04); }
     .contact-input::placeholder { color: var(--ink-faint); }
-    .contact-select { appearance: none; background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); background-repeat: no-repeat; background-position: right 1rem top 50%; background-size: 0.65rem auto; }
+    .contact-select { appearance: none; background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%230d0d0d%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); background-repeat: no-repeat; background-position: right 1rem top 50%; background-size: 0.65rem auto; }
   </style>
 
   <!-- SERVICES GRID -->
@@ -325,7 +325,7 @@
         <button class="btn-dark-lg" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Inquire About Dates →</button>
       </div>
       <div style="position: relative; border-radius: 2rem; overflow: hidden; aspect-ratio: 4/5; width: 100%; max-width: 500px;">
-        <img src="./kids-playing.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Kids playing basketball" />
+        <img src="/kids-playing.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Kids playing basketball" />
         <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
         <div class="glass-pill" style="position: absolute; bottom: 2rem; left: 2rem; right: 2rem; padding: 1rem; background: rgba(0,0,0,0.5); backdrop-filter: blur(10px);">
           <span style="color: white; font-weight: bold; font-style: italic;">"The easiest party we've ever hosted!"</span>
@@ -359,7 +359,7 @@
         <div class="grid-auto">
           <div class="glass-card" style="padding: 2rem; text-align: center;">
             <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin: 0 auto 1.5rem auto; border: 2px solid #ea580c;">
-               <img src="./coach-james.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Coach James"/>
+               <img src="/coach-james.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Coach James"/>
             </div>
             <h4 style="color: var(--ink); font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem;">Coach James</h4>
             <p style="color: #ea580c; font-size: 0.9rem; font-weight: bold; margin-bottom: 1rem;">Head of Youth Development</p>
@@ -367,7 +367,7 @@
           </div>
           <div class="glass-card" style="padding: 2rem; text-align: center;">
             <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin: 0 auto 1.5rem auto; border: 2px solid #ea580c;">
-               <img src="./coach-sarah.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Coach Sarah"/>
+               <img src="/coach-sarah.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Coach Sarah"/>
             </div>
             <h4 style="color: var(--ink); font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem;">Coach Sarah</h4>
             <p style="color: #ea580c; font-size: 0.9rem; font-weight: bold; margin-bottom: 1rem;">Fundamentals Specialist</p>
@@ -378,48 +378,7 @@
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section id="pricing-section" class="new-section">
-    <p class="eyebrow reveal-blur" style="text-align: center;">SIMPLE, TRANSPARENT</p>
-    <h2 class="section-headline shiny-title dark reveal-blur" style="text-align: center; margin-bottom: 4rem;">MEMBERSHIPS &<br>PASSES.</h2>
-    <div class="grid-auto">
-      <div class="glass-card tier-card">
-        <h3 class="shiny-title dark" style="color: var(--ink); font-size: 1.2rem; font-weight: 500;">Drop-in Pass</h3>
-        <div class="tier-price">$20<span style="font-size: 1rem; font-family: 'Inter', sans-serif; color: var(--ink-faint);"> / visit</span></div>
-        <p style="color: var(--ink-faint);">Perfect for occasional visits.</p>
-        <ul class="tier-list">
-          <li><span>•</span> Full day facility access</li>
-          <li><span>•</span> Access to pickup games</li>
-          <li><span>•</span> Bring your own ball</li>
-        </ul>
-        <button class="btn-ghost" style="margin-top: auto;" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Buy Pass</button>
-      </div>
-      <div class="glass-card tier-card" style="border: 1px solid #ea580c; position: relative;">
-        <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #ea580c; color: white; font-size: 0.8rem; font-weight: bold; padding: 2px 12px; border-radius: 12px; text-transform: uppercase;">Most Popular</div>
-        <h3 class="shiny-title dark" style="color: var(--ink); font-size: 1.2rem; font-weight: 500;">Monthly Member</h3>
-        <div class="tier-price">$90<span style="font-size: 1rem; font-family: 'Inter', sans-serif; color: var(--ink-faint);"> / mo</span></div>
-        <p style="color: var(--ink-faint);">For the dedicated baller.</p>
-        <ul class="tier-list">
-          <li><span style="color: #ea580c;">•</span> Unlimited drop-in play</li>
-          <li><span style="color: #ea580c;">•</span> 10% off clinics & camps</li>
-          <li><span style="color: #ea580c;">•</span> Advanced court booking</li>
-          <li><span style="color: #ea580c;">•</span> Free locker usage</li>
-        </ul>
-        <button class="btn-dark" style="margin-top: auto;" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Become a Member</button>
-      </div>
-      <div class="glass-card tier-card">
-        <h3 class="shiny-title dark" style="color: var(--ink); font-size: 1.2rem; font-weight: 500;">Court Rental</h3>
-        <div class="tier-price">$120<span style="font-size: 1rem; font-family: 'Inter', sans-serif; color: var(--ink-faint);"> / hr</span></div>
-        <p style="color: var(--ink-faint);">Your court, your rules.</p>
-        <ul class="tier-list">
-          <li><span>•</span> Full hardwood court</li>
-          <li><span>•</span> Scoreboard access</li>
-          <li><span>•</span> Up to 15 players</li>
-        </ul>
-        <button class="btn-ghost" style="margin-top: auto;" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Book Court</button>
-      </div>
-    </div>
-  </section>
+
 
   <!-- TESTIMONIALS -->
   <section id="testimonials-section" style="background: rgba(0,0,0,0.02); overflow: hidden;">
@@ -473,81 +432,83 @@
   </section>
 
   <!-- CONTACT SECTION -->
-  <section id="contact-section" class="new-section">
-    <p class="eyebrow reveal-blur" style="text-align: center;">GET IN TOUCH</p>
-    <h2 class="section-headline shiny-title dark reveal-blur" style="text-align: center; margin-bottom: 2rem;">BOOK A COURT<br>OR INQUIRE.</h2>
-    <p class="section-body reveal-blur" style="text-align: center; max-width: 600px; margin: 0 auto 3rem auto;">Ready to play? Fill out the form below and our team will get back to you shortly to confirm your booking.</p>
-    
-    <div class="glass-card" style="padding: 3rem 2rem; max-width: 700px; margin: 0 auto;">
-      <form id="contact-form" class="contact-form" onsubmit="submitForm(event)">
-        <!-- Next configuration (disable captcha, set redirect page back to same, or leave it) -->
-        <input type="hidden" name="_subject" value="New Inquiry from Centre AllBall Website!">
-        <input type="hidden" name="_captcha" value="false">
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-          <input type="text" name="Name" class="contact-input" placeholder="Full Name" required />
-          <input type="tel" name="Phone" class="contact-input" placeholder="Phone Number" required />
-        </div>
-        
-        <input type="email" name="Email" class="contact-input" placeholder="Email Address" required />
-        
-        <select name="Event_Type" class="contact-input contact-select" required>
-          <option value="" disabled selected>Type of Event / Purpose</option>
-          <option value="Court Rental">Court Rental</option>
-          <option value="Kids Clinic Registration">Kids Clinic Registration</option>
-          <option value="Birthday Party Inquiry">Birthday Party Inquiry</option>
-          <option value="Private Training">Private Training</option>
-          <option value="General Question">General Question</option>
-        </select>
-        
-        <textarea name="Comments" class="contact-input" placeholder="Additional Comments (Optional)" rows="4"></textarea>
-        
-        <button id="submit-btn" type="submit" class="btn-dark-lg" style="margin-top: 1rem; width: 100%;">Submit Inquiry →</button>
-        <p id="submit-msg" style="color: #ea580c; display: none; text-align: center; margin-top: 1rem;"></p>
-      </form>
-
-      <script>
-        function submitForm(e) {
-          e.preventDefault();
-          const form = e.target;
-          const btn = document.getElementById('submit-btn');
-          const msg = document.getElementById('submit-msg');
+  <section id="contact-section">
+    <div class="new-section" style="position: relative; z-index: 10;">
+      <p class="eyebrow reveal-blur" style="text-align: center;">GET IN TOUCH</p>
+      <h2 class="section-headline shiny-title dark reveal-blur" style="text-align: center; margin-bottom: 2rem;">BOOK A COURT<br>OR INQUIRE.</h2>
+      <p class="section-body reveal-blur" style="text-align: center; max-width: 600px; margin: 0 auto 3rem auto;">Ready to play? Fill out the form below and our team will get back to you shortly to confirm your booking.</p>
+      
+      <div class="glass-card" style="padding: 3rem 2rem; max-width: 700px; margin: 0 auto;">
+        <form id="contact-form" class="contact-form" onsubmit="submitForm(event)">
+          <!-- Next configuration (disable captcha, set redirect page back to same, or leave it) -->
+          <input type="hidden" name="_subject" value="New Inquiry from Centre AllBall Website!">
+          <input type="hidden" name="_captcha" value="false">
           
-          btn.innerText = 'Sending...';
-          btn.disabled = true;
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <input type="text" name="Name" class="contact-input" placeholder="Full Name" required />
+            <input type="tel" name="Phone" class="contact-input" placeholder="Phone Number" required />
+          </div>
+          
+          <input type="email" name="Email" class="contact-input" placeholder="Email Address" required />
+          
+          <select name="Event_Type" class="contact-input contact-select" required>
+            <option value="" disabled selected>Type of Event / Purpose</option>
+            <option value="Court Rental">Court Rental</option>
+            <option value="Kids Clinic Registration">Kids Clinic Registration</option>
+            <option value="Birthday Party Inquiry">Birthday Party Inquiry</option>
+            <option value="Private Training">Private Training</option>
+            <option value="General Question">General Question</option>
+          </select>
+          
+          <textarea name="Comments" class="contact-input" placeholder="Additional Comments (Optional)" rows="4"></textarea>
+          
+          <button id="submit-btn" type="submit" class="btn-dark-lg" style="margin-top: 1rem; width: 100%;">Submit Inquiry →</button>
+          <p id="submit-msg" style="color: #ea580c; display: none; text-align: center; margin-top: 1rem;"></p>
+        </form>
 
-          const formData = new FormData(form);
+        <script>
+          function submitForm(e) {
+            e.preventDefault();
+            const form = e.target;
+            const btn = document.getElementById('submit-btn');
+            const msg = document.getElementById('submit-msg');
+            
+            btn.innerText = 'Sending...';
+            btn.disabled = true;
 
-          fetch("https://formsubmit.co/ajax/sharafath2001@hotmail.com", {
-              method: "POST",
-              headers: { 
-                  'Accept': 'application/json'
-              },
-              body: formData
-          })
-          .then(response => response.json())
-          .then(data => {
-              if (data.success) {
-                  msg.innerText = "Thanks! Your inquiry has been sent.";
-                  msg.style.color = "#16a34a"; // Green for success
-                  msg.style.display = "block";
-                  form.reset();
-              } else {
-                  msg.innerText = "Please check your email to activate the form first! (FormSubmit requirement)";
-                  msg.style.color = "#ea580c";
-                  msg.style.display = "block";
-              }
-              btn.innerText = 'Submit Inquiry →';
-              btn.disabled = false;
-          })
-          .catch(error => {
-              msg.innerText = "There was an error sending the form. Please try again.";
-              msg.style.display = "block";
-              btn.innerText = 'Submit Inquiry →';
-              btn.disabled = false;
-          });
-        }
-      </script>
+            const formData = new FormData(form);
+
+            fetch("https://formsubmit.co/ajax/sharafath2001@hotmail.com", {
+                method: "POST",
+                headers: { 
+                    'Accept': 'application/json'
+                },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    msg.innerText = "Thanks! Your inquiry has been sent.";
+                    msg.style.color = "#16a34a"; // Green for success
+                    msg.style.display = "block";
+                    form.reset();
+                } else {
+                    msg.innerText = "Please check your email to activate the form first! (FormSubmit requirement)";
+                    msg.style.color = "#ea580c";
+                    msg.style.display = "block";
+                }
+                btn.innerText = 'Submit Inquiry →';
+                btn.disabled = false;
+            })
+            .catch(error => {
+                msg.innerText = "There was an error sending the form. Please try again.";
+                msg.style.display = "block";
+                btn.innerText = 'Submit Inquiry →';
+                btn.disabled = false;
+            });
+          }
+        </script>
+      </div>
     </div>
   </section>
 
