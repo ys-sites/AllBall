@@ -2,6 +2,14 @@
 
 All notable changes to the Centre AllBall website will be documented in this file.
 
+## [1.1.2] - 2026-06-08
+
+### Changed
+- Replaced the broken background image in the hero Event Card photo section with `AllBall.jpeg`.
+
+### Fixed
+- Fixed readability issues in the Event Card by setting address and open hours details (`.ec-venue-addr`) to solid black (`var(--ink)`), ensuring full legibility against the card's light background.
+
 ## [1.1.1] - 2026-06-08
 
 ### Added

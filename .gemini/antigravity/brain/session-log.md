@@ -28,6 +28,7 @@
 - **GSAP Prop Clearing**: Standard GSAP timelines leave inline `transform: translate(0px, 0px)` styles which block standard CSS hover transforms. Clearing these inline properties on completion allows smooth CSS scale transitions to trigger.
 - **Scroll Mapping**: Mapped secondary pages (services, contact) to the closest preceding link item so that the floating navbar always has a relevant active highlight.
 - **Typographic Overlays on Images**: By treating `BALL.jpg` as a full card backdrop (via absolute positioning at `z-index: 1`) and converting all overlay text and border assets to white, we preserved readability without resorting to plain black boxes or removing typography layers.
+- **Event Card Font & Image Readability**: Replaced the broken player silhouette image with `AllBall.jpeg` in the hero section Event Card. Upgraded `.ec-venue-addr` style to output a solid black font (`var(--ink)`) ensuring full text legibility on the card's light-glass backdrop.
 
 ## Next Steps
-- Gather feedback from the user on the visual design and flow.
+- Validate layout features on user check.
