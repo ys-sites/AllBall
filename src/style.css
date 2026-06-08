@@ -898,6 +898,45 @@ img {
   50% { opacity: 1; }
 }
 
+/* =============================================
+   VERTICAL BRAND LOGO — LAPTOP+
+   ============================================= */
+.hero-vertical-logo {
+  display: none; /* hidden on mobile by default */
+}
+
+@media (min-width: 1024px) {
+  .hero-vertical-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    bottom: 2.4rem;
+    left: 2.5rem;
+    z-index: 10;
+    transform-origin: left bottom;
+    transform: rotate(-90deg) translateX(-100%);
+  }
+
+  .hero-vertical-logo::before {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.45);
+    flex-shrink: 0;
+  }
+
+  .hero-vertical-logo span {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    letter-spacing: 5px;
+    color: rgba(255, 255, 255, 0.5);
+    white-space: nowrap;
+    user-select: none;
+  }
+}
+
 .scroll-line {
   width: 1px;
   height: 40px;
