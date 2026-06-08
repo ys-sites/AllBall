@@ -297,9 +297,9 @@ gsap.set('.nav-links', { opacity: 0, y: -8 });
 
 const tl = gsap.timeline({ delay: 0.15 });
 
-tl.to('.nav-logo', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.1)
+tl.to('.nav-logo', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', clearProps: 'transform' }, 0.1)
   .to('.nav-links', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.15)
-  .to('.profile-btn', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.2)
+  .to('.profile-btn', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', clearProps: 'transform' }, 0.2)
   .to('#event-card', { opacity: 1, x: 0, duration: 1.1, ease: 'expo.out' }, 0.45)
   .to('#hero-text', { opacity: 1, x: 0, duration: 1.1, ease: 'expo.out' }, 0.55)
   .to('#nav-arrow', { opacity: 1, duration: 0.5, ease: 'power2.out' }, 1.0)
@@ -307,6 +307,42 @@ tl.to('.nav-logo', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.1)
   .to('.sp1', { strokeDashoffset: 0, duration: 1.6, ease: 'power2.inOut' }, 1.1)
   .to('.sp2', { strokeDashoffset: 0, duration: 1.0, ease: 'power2.inOut' }, 1.7)
   .to('.sp3', { strokeDashoffset: 0, duration: 0.7, ease: 'power2.inOut' }, 1.9);
+
+/* =============================================
+   DYNAMIC NAV LINK HIGHLIGHTING ON SCROLL
+   ============================================= */
+const navLinks = document.querySelectorAll('.nav-links a');
+const sectionMappings = [
+  { id: '#hero-section', linkHref: '#hero-section' },
+  { id: '#stats-section', linkHref: '#stats-section' },
+  { id: '#how-section', linkHref: '#how-section' },
+  { id: '#services-section', linkHref: '#how-section' },
+  { id: '#contact-section', linkHref: '#how-section' },
+  { id: '#faq-section', linkHref: '#site-footer' },
+  { id: '#site-footer', linkHref: '#site-footer' },
+];
+
+sectionMappings.forEach((map) => {
+  const el = document.querySelector(map.id);
+  if (el) {
+    ScrollTrigger.create({
+      trigger: el,
+      start: 'top 50%',
+      end: 'bottom 50%',
+      onToggle: (self) => {
+        if (self.isActive) {
+          navLinks.forEach((link) => {
+            if (link.getAttribute('href') === map.linkHref) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          });
+        }
+      }
+    });
+  }
+});
 
 
 /* =============================================

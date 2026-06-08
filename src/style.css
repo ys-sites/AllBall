@@ -173,12 +173,44 @@ img {
 
 .nav-logo {
   font-family: var(--font-display);
-  font-size: 1.3rem;
-  letter-spacing: 3px;
+  font-style: italic; /* font-display italic */
+  font-size: 1.25rem;
+  letter-spacing: 2px;
   color: var(--ink);
-  padding: 0 0.5rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  transition: transform 0.3s var(--ease-out), background-position 0.5s var(--ease-out), opacity 0.6s, y 0.6s;
+  display: inline-flex;
+  align-items: center;
   opacity: 0;
   transform: translateY(-8px);
+
+  /* Gradient border ring */
+  border: 1.5px solid transparent;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), 
+                    linear-gradient(135deg, var(--accent) 0%, var(--gold) 50%, var(--accent) 100%);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-size: 100% 100%, 200% 200%;
+  animation: gradient-shift 6s ease infinite;
+}
+
+.nav-logo:hover {
+  transform: scale(1.08);
+}
+
+.nav-divider {
+  width: 1px;
+  height: 1.25rem;
+  background: rgba(0, 0, 0, 0.12);
+  margin: 0 0.4rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .nav-divider {
+    display: none;
+  }
 }
 
 .nav-links {
@@ -193,18 +225,24 @@ img {
   font-size: 0.8rem;
   font-weight: 500;
   color: var(--ink-muted);
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 
 .nav-links a:hover {
   background: rgba(0, 0, 0, 0.07);
 }
 
+.nav-links a.active {
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--ink);
+  font-weight: 600;
+}
+
 .profile-btn {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.1rem;
   border-radius: 999px;
   font-size: 0.8rem;
   font-weight: 500;
@@ -216,10 +254,18 @@ img {
   opacity: 0;
   transform: translateY(-8px);
   cursor: pointer;
-  transition: box-shadow 0.2s;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), background-position 0.5s var(--ease-out), opacity 0.6s, y 0.6s;
 }
 
 .profile-btn:hover {
+  border-color: transparent;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), 
+                    linear-gradient(135deg, var(--accent) 0%, var(--gold) 50%, var(--accent) 100%);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-size: 100% 100%, 200% 200%;
+  animation: gradient-shift 6s ease infinite;
+  transform: scale(1.04);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
@@ -1776,6 +1822,14 @@ button, a {
   line-height: inherit;
 }
 
+.shiny-title[style*="text-align: center"],
+.shiny-title[style*="text-align:center"] {
+  display: block !important;
+  width: fit-content !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 .shiny-title.dark {
   background-image: linear-gradient(120deg, var(--ink) 0%, var(--ink) 35%, var(--shiny-highlight) 50%, var(--ink) 65%, var(--ink) 100%) !important;
 }
@@ -1799,4 +1853,37 @@ button, a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/* =============================================
+   GRADIENT SHIFT KEYFRAMES
+   ============================================= */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* =============================================
+   POSTER BASKETBALL STYLING
+   ============================================= */
+.poster-ball {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  height: 60%;
+  object-fit: contain;
+  filter: grayscale(100%) contrast(140%) brightness(95%);
+  mix-blend-mode: multiply;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0.88;
+  transition: transform 0.6s var(--ease-out), filter 0.6s var(--ease-out);
+}
+
+.poster-graphic:hover .poster-ball {
+  transform: translateX(-50%) scale(1.05) rotate(5deg);
+  filter: grayscale(100%) contrast(160%) brightness(100%);
 }
