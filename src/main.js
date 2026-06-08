@@ -300,14 +300,13 @@ const tl = gsap.timeline({ delay: 0.15 });
 tl.to('.nav-logo', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.1)
   .to('.nav-links', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.15)
   .to('.profile-btn', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.2)
-  .to('#ph-badge', { opacity: 1, y: 0, duration: 0.7, ease: 'expo.out' }, 0.4)
-  .to('#event-card', { opacity: 1, x: 0, duration: 1.1, ease: 'expo.out' }, 0.55)
-  .to('#hero-text', { opacity: 1, x: 0, duration: 1.1, ease: 'expo.out' }, 0.65)
-  .to('#nav-arrow', { opacity: 1, duration: 0.5, ease: 'power2.out' }, 1.1)
-  .to('#sig-wrap', { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 1.2)
-  .to('.sp1', { strokeDashoffset: 0, duration: 1.6, ease: 'power2.inOut' }, 1.2)
-  .to('.sp2', { strokeDashoffset: 0, duration: 1.0, ease: 'power2.inOut' }, 1.8)
-  .to('.sp3', { strokeDashoffset: 0, duration: 0.7, ease: 'power2.inOut' }, 2.0);
+  .to('#event-card', { opacity: 1, x: 0, duration: 1.1, ease: 'expo.out' }, 0.45)
+  .to('#hero-text', { opacity: 1, x: 0, duration: 1.1, ease: 'expo.out' }, 0.55)
+  .to('#nav-arrow', { opacity: 1, duration: 0.5, ease: 'power2.out' }, 1.0)
+  .to('#sig-wrap', { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 1.1)
+  .to('.sp1', { strokeDashoffset: 0, duration: 1.6, ease: 'power2.inOut' }, 1.1)
+  .to('.sp2', { strokeDashoffset: 0, duration: 1.0, ease: 'power2.inOut' }, 1.7)
+  .to('.sp3', { strokeDashoffset: 0, duration: 0.7, ease: 'power2.inOut' }, 1.9);
 
 
 /* =============================================
@@ -324,10 +323,17 @@ if (eventCardEl) {
 }
 
 /* =============================================
-   RENDER LOOP
+   RENDER LOOP with Throttling (IntersectionObserver)
    ============================================= */
+let animationFrameId = null;
+let isIntersecting = false;
+
 function animate() {
-  requestAnimationFrame(animate);
+  if (!isIntersecting) {
+    animationFrameId = null;
+    return;
+  }
+  animationFrameId = requestAnimationFrame(animate);
 
   if (ball) {
     if (!isDragging) {
@@ -378,7 +384,44 @@ function animate() {
   renderer.render(scene, camera);
 }
 
-animate();
+// Observe #stats-section to toggle isIntersecting and start/stop render loop
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    isIntersecting = entry.isIntersecting;
+    if (isIntersecting && !animationFrameId) {
+      animate();
+    }
+  });
+}, {
+  root: null, // relative to document viewport
+  rootMargin: '120px', // start rendering early for smooth transition
+  threshold: 0,
+});
+
+if (statsSection) {
+  observer.observe(statsSection);
+}
+
+/* =============================================
+   GSAP SCROLL-TRIGGERED BLUR REVEALS
+   ============================================= */
+document.querySelectorAll('.reveal-blur').forEach((el) => {
+  gsap.set(el, { filter: 'blur(12px)', opacity: 0, y: 30 });
+  ScrollTrigger.create({
+    trigger: el,
+    start: 'top 85%',
+    onEnter: () => {
+      gsap.to(el, {
+        filter: 'blur(0px)',
+        opacity: 1,
+        y: 0,
+        duration: 1.0,
+        ease: 'power3.out',
+        overwrite: 'auto'
+      });
+    }
+  });
+});
 
 /* =============================================
    WINDOW RESIZE
@@ -394,6 +437,10 @@ window.addEventListener('resize', () => {
   basePos.y = window.innerWidth <= 768 ? 0.5 : 0.0;
   if (ball) {
     ball.position.set(basePos.x, basePos.y, basePos.z);
+  }
+  
+  if (!isIntersecting) {
+    renderer.render(scene, camera);
   }
   
   ScrollTrigger.refresh();
