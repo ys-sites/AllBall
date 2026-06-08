@@ -9,7 +9,7 @@ export const translations = {
 
     // Hero
     hero_eyebrow: "TRAINING SESSIONS FOR KIDS",
-    hero_line1: "KIRKLAND'S",
+    hero_line1: "MONTREAL'S",
     hero_line2: "PREMIER",
     hero_line3: "COURT",
     hero_brand: "CENTRE ALLBALL",
@@ -20,7 +20,7 @@ export const translations = {
     // Stats Section
     stats_eyebrow: "OUR IMPACT",
     stats_title: "ELEVATE<br>THEIR GAME.",
-    stats_body: "Kirkland's premier destination for youth basketball training and development. We focus on fundamentals, teamwork, and love for the game.",
+    stats_body: "Montreal's premier destination for youth basketball training and development. We focus on fundamentals, teamwork, and love for the game.",
     stat1_num: "500+",
     stat1_label: "Youth Players",
     stat1_delta: "↑ Growing community",
@@ -105,7 +105,7 @@ export const translations = {
     testimonials_eyebrow: "COMMUNITY FEEDBACK",
     testimonials_title: "WHAT PARENTS<br>ARE SAYING.",
     testimonial1_text: "\"We hosted our son's 10th birthday here and it was incredible. The coach kept the kids engaged the whole time, and the pizza room was perfectly set up. Easiest party ever.\"",
-    testimonial1_author: "— Sarah T., Kirkland",
+    testimonial1_author: "— Sarah T., Montreal",
     testimonial2_text: "\"The weekend clinics have transformed my daughter's confidence. The coaches really focus on fundamentals instead of just letting them scrimmage. Highly recommend!\"",
     testimonial2_author: "— David M., Pointe-Claire",
     testimonial3_text: "\"Finally a premium, clean, well-lit facility on the West Island. My teenager Practically lives here on the weekends for drop-in play. The staff is always friendly.\"",
@@ -145,7 +145,7 @@ export const translations = {
     faq4_a: "We provide basketballs for all clinics and parties. For drop-in play or court rentals, we ask that you bring your own, though we do have limited rentals available at the front desk.",
 
     // Footer
-    footer_tagline: "Kirkland's finest sports complex for youth basketball training and development.",
+    footer_tagline: "Montreal's finest sports complex for youth basketball training and development.",
     footer_col1_title: "Programs",
     footer_col1_link1: "Youth Training",
     footer_col1_link2: "Summer Camps",
@@ -168,7 +168,7 @@ export const translations = {
 
     // Sticky CTA
     sticky_cta_title: "CENTRE ALLBALL",
-    sticky_cta_subtitle: "Kirkland's Premier Court",
+    sticky_cta_subtitle: "Montreal's Premier Court",
     sticky_cta_btn: "Book Now →"
   },
   fr: {
@@ -183,7 +183,7 @@ export const translations = {
     hero_eyebrow: "SESSIONS D'ENTRAÎNEMENT POUR ENFANTS",
     hero_line1: "LE PREMIER",
     hero_line2: "TERRAIN DE",
-    hero_line3: "KIRKLAND",
+    hero_line3: "MONTREAL",
     hero_brand: "CENTRE ALLBALL",
     hero_ready: "Prêt à jouer ?",
     hero_cta: "Réserver un terrain →",
@@ -192,7 +192,7 @@ export const translations = {
     // Stats Section
     stats_eyebrow: "NOTRE IMPACT",
     stats_title: "ÉLEVER<br>LEUR JEU.",
-    stats_body: "La destination de choix à Kirkland pour l'entraînement de basketball des jeunes. Nous nous concentrons sur les principes fondamentaux, le travail d'équipe et l'amour du jeu.",
+    stats_body: "La destination de choix à Montreal pour l'entraînement de basketball des jeunes. Nous nous concentrons sur les principes fondamentaux, le travail d'équipe et l'amour du jeu.",
     stat1_num: "500+",
     stat1_label: "Jeunes joueurs",
     stat1_delta: "↑ Communauté en croissance",
@@ -277,7 +277,7 @@ export const translations = {
     testimonials_eyebrow: "COMMENTAIRES",
     testimonials_title: "CE QUE DISENT<br>LES PARENTS.",
     testimonial1_text: "\"Nous avons fêté le 10e anniversaire de notre fils ici et c'était incroyable. L'entraîneur a gardé les enfants motivés, et la salle de pizza était parfaite. La fête la plus facile de ma vie.\"",
-    testimonial1_author: "— Sarah T., Kirkland",
+    testimonial1_author: "— Sarah T., Montreal",
     testimonial2_text: "\"Les cliniques du week-end ont transformé la confiance de ma fille. Les entraîneurs se concentrent vraiment sur les bases au lieu de simplement les laisser jouer. Je recommande vivement !\"",
     testimonial2_author: "— David M., Pointe-Claire",
     testimonial3_text: "\"Enfin un complexe haut de gamme, propre et bien éclairé dans l'Ouest de l'Île. Mon adolescent y passe pratiquement ses week-ends pour le jeu libre. Le personnel est très sympa.\"",
@@ -317,7 +317,7 @@ export const translations = {
     faq4_a: "Nous fournissons des ballons pour toutes les cliniques et fêtes. Pour le jeu libre ou les locations, nous vous demandons d'apporter le vôtre.",
 
     // Footer
-    footer_tagline: "Le meilleur complexe sportif de Kirkland pour l'entraînement et le développement du basketball chez les jeunes.",
+    footer_tagline: "Le meilleur complexe sportif de Montreal pour l'entraînement et le développement du basketball chez les jeunes.",
     footer_col1_title: "Programmes",
     footer_col1_link1: "Entraînement des jeunes",
     footer_col1_link2: "Camps d'été",
@@ -340,7 +340,7 @@ export const translations = {
 
     // Sticky CTA
     sticky_cta_title: "CENTRE ALLBALL",
-    sticky_cta_subtitle: "Le Premier Terrain de Kirkland",
+    sticky_cta_subtitle: "Le Premier Terrain de Montreal",
     sticky_cta_btn: "Réserver →"
   }
 };

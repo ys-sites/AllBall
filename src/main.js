@@ -68,7 +68,7 @@ scene.add(hemiLight);
    BALL SECTION WAYPOINTS (REMOVED)
    ============================================= */
 const isMobile = () => window.innerWidth <= 768;
-const BALL_SCALE = isMobile() ? 0.55 : 1.2;
+const BALL_SCALE = isMobile() ? 0.95 : 1.2;
 
 /* =============================================
    STATE
@@ -304,8 +304,7 @@ gsap.set('.nav-cta-btn', { opacity: 0, y: -8 });
 
 const tl = gsap.timeline({ delay: 0.15 });
 
-tl.to('.nav-logo', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', clearProps: 'transform' }, 0.1)
-  .to('.nav-links-wrapper', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.15)
+tl.to('.nav-links-wrapper', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.15)
   .to('.lang-selector', { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }, 0.2)
   .to('.nav-cta-btn', { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out', clearProps: 'transform' }, 0.25)
   .to('#event-card', { opacity: 1, x: 0, duration: 1.1, ease: 'expo.out' }, 0.45)
@@ -481,6 +480,8 @@ window.addEventListener('resize', () => {
   basePos.y = 0.0;
   if (ball) {
     ball.position.set(basePos.x, basePos.y, basePos.z);
+    const currentBallScale = isMobile() ? 0.95 : 1.2;
+    ball.scale.setScalar(baseScale * currentBallScale);
   }
   
   if (!isIntersecting) {

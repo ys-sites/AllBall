@@ -4,3 +4,5 @@ dist/
 .env
 .env*.local
 web_essentials.sop
+public/taste-skill-main/
+

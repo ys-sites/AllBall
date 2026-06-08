@@ -183,15 +183,8 @@ img {
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  opacity: 0;
-  transform: translateY(-8px);
-  transition: transform 0.25s var(--ease-out), opacity 0.6s;
+  gap: 8px;
   white-space: nowrap;
-}
-
-.nav-logo:hover {
-  transform: scale(1.04);
 }
 
 .nav-logo-icon {
@@ -2081,4 +2074,9 @@ button, a {
   transform: scale(1.08) rotate(1deg);
   opacity: 0.8;
   filter: brightness(0.7);
+}
+
+/* Button pressed/active feedback */
+.btn-dark:active, .btn-dark-lg:active, .btn-dark-sm:active, .btn-ghost:active, .nav-cta-btn:active {
+  transform: scale(0.97) translateY(1px) !important;
 }
