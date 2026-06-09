@@ -737,14 +737,15 @@ img {
    HERO SOCIAL STRIP
    ============================================= */
 .hero-social-strip {
-  position: absolute;
-  top: calc(100% + 0.8rem);
-  right: 0.5rem;
+  position: relative;
+  margin-top: 1.2rem;
+  margin-right: 3rem; /* aligns under the Book a Court button */
+  align-self: flex-end;
   z-index: 20;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 10px;
-  padding: 10px 8px;
+  padding: 8px 12px;
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(18px) saturate(160%);
   -webkit-backdrop-filter: blur(18px) saturate(160%);
@@ -2082,7 +2083,7 @@ button, a {
    HERO SOCIAL STRIP RESPONSIVE OVERRIDES
    ============================================= */
 
-/* Tablet & Mobile: center the hero-text flex container items and align vertical strip below the CTA */
+/* Tablet (<= 900px): center the hero-text container items and align horizontal strip below the CTA */
 @media (max-width: 900px) {
   #hero-text {
     display: flex !important;
@@ -2094,15 +2095,18 @@ button, a {
     position: relative !important;
   }
   .hero-social-strip {
-    position: absolute !important;
-    top: calc(100% + 0.8rem) !important;
-    right: 50% !important;
-    transform: translateX(50%) !important;
+    position: relative !important;
+    right: auto !important;
     left: auto !important;
+    top: auto !important;
     bottom: auto !important;
-    flex-direction: column !important;
-    padding: 10px 8px !important;
+    transform: none !important;
+    flex-direction: row !important;
+    padding: 8px 12px !important;
     gap: 8px !important;
+    margin-top: 1.2rem !important;
+    margin-right: 0 !important;
+    align-self: center !important;
     display: flex !important;
   }
   .hero-social-btn {
@@ -2111,7 +2115,7 @@ button, a {
   }
 }
 
-/* Mobile Portrait (<= 600px): inline next to CTA button, smaller icons */
+/* Mobile Portrait (<= 600px): vertical absolute on the side of the screen */
 @media (max-width: 600px) and (orientation: portrait) {
   #hero-text {
     transform: none !important;
@@ -2122,61 +2126,63 @@ button, a {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    padding: 0.35rem 0.35rem 0.35rem 0.8rem !important;
-    gap: 0.4rem !important;
+    padding: 0.45rem 0.45rem 0.45rem 1rem !important;
+    gap: 0.6rem !important;
   }
   .pricing-text {
-    font-size: 0.72rem !important;
+    font-size: 0.76rem !important;
   }
   .btn-dark-sm {
-    font-size: 0.72rem !important;
-    padding: 0.45rem 0.7rem !important;
+    font-size: 0.76rem !important;
+    padding: 0.5rem 1rem !important;
   }
   .hero-social-strip {
-    position: relative !important;
-    right: auto !important;
+    position: absolute !important;
+    right: 1rem !important;
     left: auto !important;
+    top: 50% !important;
     bottom: auto !important;
-    top: auto !important;
-    transform: none !important;
-    flex-direction: row !important;
-    padding: 0 !important;
-    background: none !important;
-    border: none !important;
-    box-shadow: none !important;
-    gap: 5px !important;
+    transform: translateY(-50%) !important;
+    flex-direction: column !important;
+    padding: 12px 9px !important;
+    gap: 8px !important;
     margin-top: 0 !important;
     margin-right: 0 !important;
-    align-self: center !important;
-    display: inline-flex !important;
+    align-self: auto !important;
+    display: flex !important;
+    background: rgba(255, 255, 255, 0.12) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25) !important;
+    border-radius: 999px !important;
   }
   .hero-social-btn {
-    width: 28px !important;
-    height: 28px !important;
+    width: 34px !important;
+    height: 34px !important;
     background: rgba(255, 255, 255, 0.15) !important;
   }
   .hero-social-btn svg {
-    width: 14px !important;
-    height: 14px !important;
+    width: 16px !important;
+    height: 16px !important;
   }
 }
 
-/* Mobile Landscape (<= 950px and landscape): horizontal at the bottom-right corner */
-@media (max-width: 950px) and (orientation: landscape) {
+/* Mobile Landscape (<= 740px and landscape): vertical absolute on the side of the screen */
+@media (max-width: 740px) and (orientation: landscape) {
   #hero-text {
     transform: none !important;
   }
   .hero-social-strip {
     position: absolute !important;
-    right: 1.5rem !important;
+    right: 1.2rem !important;
     left: auto !important;
-    bottom: 2rem !important;
-    top: auto !important;
-    transform: none !important;
-    flex-direction: row !important;
-    padding: 10px 14px !important;
+    top: 50% !important;
+    bottom: auto !important;
+    transform: translateY(-50%) !important;
+    flex-direction: column !important;
+    padding: 12px 9px !important;
     gap: 8px !important;
     margin-top: 0 !important;
+    margin-right: 0 !important;
     display: flex !important;
     background: rgba(255, 255, 255, 0.12) !important;
     border: 1px solid rgba(255, 255, 255, 0.25) !important;
