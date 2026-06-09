@@ -76,6 +76,7 @@ const BALL_SCALE = isMobile() ? 0.95 : 1.2;
 let ball = null;
 let ballLoaded = false;
 let baseScale = 1;
+const raycaster = new THREE.Raycaster();
 
 // Mouse hover & position tracking
 let targetMouse = { x: 0, y: 0 };
@@ -199,9 +200,30 @@ function getEventPos(e) {
 }
 
 canvas.addEventListener('mousedown', onDragStart);
-canvas.addEventListener('touchstart', onDragStart, { passive: true });
+canvas.addEventListener('touchstart', onDragStart, { passive: false });
 
 function onDragStart(e) {
+  const isTouchEvent = e.touches && e.touches.length > 0;
+  
+  if (isTouchEvent && window.innerWidth <= 1024) {
+    const rect = canvas.getBoundingClientRect();
+    const touch = e.touches[0];
+    const x = ((touch.clientX - rect.left) / rect.width) * 2 - 1;
+    const y = -((touch.clientY - rect.top) / rect.height) * 2 + 1;
+    const ndcVector = new THREE.Vector2(x, y);
+    
+    raycaster.setFromCamera(ndcVector, camera);
+    const intersects = raycaster.intersectObjects(ball ? [ball] : [], true);
+    
+    if (intersects.length === 0) {
+      return;
+    }
+    
+    if (e.cancelable) {
+      e.preventDefault();
+    }
+  }
+
   isDragging = true;
   const pos = getEventPos(e);
   prevMouse.x = pos.x;

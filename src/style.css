@@ -2099,23 +2099,10 @@ button, a {
   }
 }
 
-/* Mobile Portrait (<= 600px): horizontal bottom center absolute */
+/* Mobile Portrait (<= 600px): hide social strip to avoid overlap */
 @media (max-width: 600px) and (orientation: portrait) {
   .hero-social-strip {
-    position: absolute !important;
-    right: auto !important;
-    top: auto !important;
-    bottom: 5.5rem !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    flex-direction: row !important;
-    padding: 10px 14px !important;
-    gap: 8px !important;
-    margin-top: 0 !important;
-  }
-  .hero-social-btn {
-    width: 36px !important;
-    height: 36px !important;
+    display: none !important;
   }
 }
 
@@ -2123,15 +2110,15 @@ button, a {
 @media (max-width: 950px) and (orientation: landscape) {
   .hero-social-strip {
     position: absolute !important;
-    right: 1.5rem !important;
+    right: 1rem !important;
     left: auto !important;
-    top: 5rem !important;
-    bottom: auto !important;
-    transform: none !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
     flex-direction: column !important;
     padding: 10px 8px !important;
     gap: 8px !important;
     margin-top: 0 !important;
+    bottom: auto !important;
   }
   .hero-social-btn {
     width: 32px !important;
