@@ -730,9 +730,10 @@ img {
    HERO SOCIAL STRIP
    ============================================= */
 .hero-social-strip {
-  position: relative;
-  margin-top: 1.5rem;
-  align-self: flex-end;
+  position: absolute;
+  right: 2.2rem;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 20;
   display: flex;
   flex-direction: column;
@@ -2073,7 +2074,7 @@ button, a {
    HERO SOCIAL STRIP RESPONSIVE OVERRIDES
    ============================================= */
 
-/* Tablet & Mobile: center the hero-text flex container items and align vertical strip */
+/* Tablet & Mobile: center the hero-text flex container items and align vertical strip on the side */
 @media (max-width: 900px) {
   #hero-text {
     display: flex !important;
@@ -2081,16 +2082,25 @@ button, a {
     align-items: center !important;
   }
   .hero-social-strip {
-    align-self: center !important;
-    margin-top: 1.2rem !important;
+    position: absolute !important;
+    right: 1.5rem !important;
+    left: auto !important;
+    top: 50% !important;
+    bottom: auto !important;
+    transform: translateY(-50%) !important;
+    flex-direction: column !important;
+    padding: 12px 9px !important;
+    gap: 8px !important;
+    margin-top: 0 !important;
+  }
+  .hero-social-btn {
+    width: 34px !important;
+    height: 34px !important;
   }
 }
 
 /* Mobile Portrait (<= 600px): horizontal bottom center absolute */
 @media (max-width: 600px) and (orientation: portrait) {
-  #hero-text {
-    position: static !important;
-  }
   .hero-social-strip {
     position: absolute !important;
     right: auto !important;
@@ -2111,9 +2121,6 @@ button, a {
 
 /* Mobile Landscape (<= 950px and landscape): vertical side absolute */
 @media (max-width: 950px) and (orientation: landscape) {
-  #hero-text {
-    position: static !important;
-  }
   .hero-social-strip {
     position: absolute !important;
     right: 1.5rem !important;
