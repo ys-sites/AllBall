@@ -721,16 +721,18 @@ img {
   margin-left: auto;
   opacity: 0;
   transform: translateX(40px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 /* =============================================
    HERO SOCIAL STRIP
    ============================================= */
 .hero-social-strip {
-  position: absolute;
-  right: 2.2rem;
-  top: 50%;
-  transform: translateY(-50%);
+  position: relative;
+  margin-top: 1.5rem;
+  align-self: flex-end;
   z-index: 20;
   display: flex;
   flex-direction: column;
@@ -742,6 +744,7 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 999px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  pointer-events: auto !important;
 }
 
 .hero-social-btn {
@@ -768,26 +771,7 @@ img {
 .hero-social-btn[aria-label="Instagram"]:hover { color: #e1306c; }
 .hero-social-btn[aria-label="TikTok"]:hover { color: #010101; }
 
-/* Mobile: switch to horizontal row at the bottom center */
-@media (max-width: 768px) {
-  .hero-social-strip {
-    /* Override vertical right-side pill */
-    right: auto;
-    top: auto;
-    transform: none;
-    /* Horizontal pill, bottom-center */
-    bottom: 5.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    flex-direction: row;
-    padding: 10px 14px;
-    gap: 8px;
-  }
-  .hero-social-btn {
-    width: 36px;
-    height: 36px;
-  }
-}
+
 
 .hero-headline {
   font-family: var(--font-display);
@@ -1563,7 +1547,7 @@ button, a {
   /* HERO */
   #hero-section {
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     padding: 5.5rem 1.5rem 4.5rem;
     gap: 1.5rem;
@@ -1576,6 +1560,9 @@ button, a {
     text-align: center;
     max-width: 100%;
     margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .hero-headline {
@@ -1596,6 +1583,7 @@ button, a {
   }
 
   #sig-wrap { display: none; }
+  .nav-arrow-btn { display: none !important; }
 
   /* STATS */
   #stats-section {
@@ -1672,9 +1660,9 @@ button, a {
     min-height: 100svh;
     min-height: 100vh;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    padding: 5.5rem 1.4rem 2.8rem;
+    padding: 4.5rem 1.2rem 1.2rem;
     text-align: center;
     gap: 0;
   }
@@ -1701,7 +1689,7 @@ button, a {
   .ph-source { font-size: 0.59rem; }
 
   #hero-text {
-    position: relative;
+    position: static !important;
     z-index: 20;
     text-align: center;
     max-width: 100%;
@@ -1717,11 +1705,11 @@ button, a {
   }
 
   .hero-headline {
-    font-size: clamp(3.4rem, 16vw, 5.5rem);
+    font-size: clamp(2.4rem, 12vw, 3.8rem);
     mix-blend-mode: normal;
     -webkit-text-fill-color: var(--ink);
     background: none;
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.5rem;
     letter-spacing: -0.5px;
     line-height: 0.9;
   }
@@ -1733,8 +1721,8 @@ button, a {
   }
 
   .hero-brand {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .pricing-strip {
@@ -2079,4 +2067,70 @@ button, a {
 /* Button pressed/active feedback */
 .btn-dark:active, .btn-dark-lg:active, .btn-dark-sm:active, .btn-ghost:active, .nav-cta-btn:active {
   transform: scale(0.97) translateY(1px) !important;
+}
+
+/* =============================================
+   HERO SOCIAL STRIP RESPONSIVE OVERRIDES
+   ============================================= */
+
+/* Tablet & Mobile: center the hero-text flex container items and align vertical strip */
+@media (max-width: 900px) {
+  #hero-text {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .hero-social-strip {
+    align-self: center !important;
+    margin-top: 1.2rem !important;
+  }
+}
+
+/* Mobile Portrait (<= 600px): horizontal bottom center absolute */
+@media (max-width: 600px) and (orientation: portrait) {
+  #hero-text {
+    position: static !important;
+  }
+  .hero-social-strip {
+    position: absolute !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: 5.5rem !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    flex-direction: row !important;
+    padding: 10px 14px !important;
+    gap: 8px !important;
+    margin-top: 0 !important;
+  }
+  .hero-social-btn {
+    width: 36px !important;
+    height: 36px !important;
+  }
+}
+
+/* Mobile Landscape (<= 950px and landscape): vertical side absolute */
+@media (max-width: 950px) and (orientation: landscape) {
+  #hero-text {
+    position: static !important;
+  }
+  .hero-social-strip {
+    position: absolute !important;
+    right: 1.5rem !important;
+    left: auto !important;
+    top: 5rem !important;
+    bottom: auto !important;
+    transform: none !important;
+    flex-direction: column !important;
+    padding: 10px 8px !important;
+    gap: 8px !important;
+    margin-top: 0 !important;
+  }
+  .hero-social-btn {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .nav-arrow-btn {
+    display: none !important;
+  }
 }
