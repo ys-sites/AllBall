@@ -584,3 +584,45 @@ if (savedLang !== 'en') {
   // Apply saved non-English language after entrance animation
   setTimeout(() => switchLanguage(savedLang), 500);
 }
+
+/* =============================================
+   HERO VIDEO AUTOPLAY FALLBACK FOR MOBILE
+   ============================================= */
+function setupHeroVideoAutoplay() {
+  const video = document.querySelector('#hero-section video');
+  if (!video) return;
+
+  // Force playsinline and muted properties via JS
+  video.muted = true;
+  video.playsInline = true;
+
+  // Attempt playback
+  const playPromise = video.play();
+  
+  if (playPromise !== undefined) {
+    playPromise.catch((error) => {
+      console.warn("Autoplay prevented on mobile, waiting for interaction:", error);
+      
+      const startVideoOnInteraction = () => {
+        video.play().then(() => {
+          document.removeEventListener('touchstart', startVideoOnInteraction);
+          document.removeEventListener('click', startVideoOnInteraction);
+          document.removeEventListener('scroll', startVideoOnInteraction);
+        }).catch((err) => {
+          console.error("Playback fallback failed:", err);
+        });
+      };
+
+      document.addEventListener('touchstart', startVideoOnInteraction, { passive: true });
+      document.addEventListener('click', startVideoOnInteraction, { passive: true });
+      document.addEventListener('scroll', startVideoOnInteraction, { passive: true });
+    });
+  }
+}
+
+// Initial trigger
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+  setupHeroVideoAutoplay();
+} else {
+  window.addEventListener('DOMContentLoaded', setupHeroVideoAutoplay);
+}
