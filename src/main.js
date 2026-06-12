@@ -92,6 +92,7 @@ let autoVel = {
 
 // Drag state
 let isDragging = false;
+let isTouchDraggingBall = false; // true only when touch confirmed a hit on the ball mesh
 let prevMouse = { x: 0, y: 0 };
 let velocity = { x: 0, y: 0 };
 const DAMPING = 0.94;
@@ -140,9 +141,9 @@ loader.load(
     ball.traverse((child) => {
       if (child.isMesh && child.material) {
         const m = child.material;
-        m.envMapIntensity = 0.85; // Enhance reflections
-        if (m.roughness !== undefined) m.roughness = 0.48; // Tactile leather texture
-        if (m.metalness !== undefined) m.metalness = 0.08; // Subtle sheen
+        m.envMapIntensity = 1.8;  // Raised from 0.85 — restores full 3D shading depth
+        if (m.roughness !== undefined) m.roughness = 0.44;  // Tactile leather texture
+        if (m.metalness !== undefined) m.metalness = 0.12;  // Subtle sheen
         m.needsUpdate = true;
       }
     });
@@ -204,21 +205,25 @@ canvas.addEventListener('touchstart', onDragStart, { passive: false });
 
 function onDragStart(e) {
   const isTouchEvent = e.touches && e.touches.length > 0;
-  
-  if (isTouchEvent && window.innerWidth <= 1024) {
+
+  if (isTouchEvent) {
+    // Always run the hit-test on touch — bail before setting isDragging if miss
     const rect = canvas.getBoundingClientRect();
     const touch = e.touches[0];
     const x = ((touch.clientX - rect.left) / rect.width) * 2 - 1;
     const y = -((touch.clientY - rect.top) / rect.height) * 2 + 1;
     const ndcVector = new THREE.Vector2(x, y);
-    
+
     raycaster.setFromCamera(ndcVector, camera);
     const intersects = raycaster.intersectObjects(ball ? [ball] : [], true);
-    
+
     if (intersects.length === 0) {
+      // Touch missed the ball — let the page scroll normally
       return;
     }
-    
+
+    // Touch confirmed on the ball mesh
+    isTouchDraggingBall = true;
     if (e.cancelable) {
       e.preventDefault();
     }
@@ -237,8 +242,9 @@ window.addEventListener('touchmove', onDragMove, { passive: false }); // Disable
 
 function onDragMove(e) {
   if (!isDragging || !ball) return;
-  if (e.cancelable) {
-    e.preventDefault(); // Prevent page scroll on touch-dragging the ball
+  // Only block page scroll when the touch was confirmed to hit the ball
+  if (isTouchDraggingBall && e.cancelable) {
+    e.preventDefault();
   }
   const pos = getEventPos(e);
   velocity.x = (pos.y - prevMouse.y) * 0.006;
@@ -255,6 +261,7 @@ window.addEventListener('touchend', onDragEnd);
 function onDragEnd() {
   if (!isDragging) return;
   isDragging = false;
+  isTouchDraggingBall = false; // Reset touch-ball flag
   // Transfer momentum to autoVel
   const speed = Math.sqrt(velocity.x * velocity.x + velocity.y * velocity.y);
   if (speed > 0.0005) {
