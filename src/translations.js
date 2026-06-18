@@ -96,9 +96,9 @@ export const translations = {
     coach_james_name: "Coach James",
     coach_james_role: "Head of Youth Development",
     coach_james_bio: "Former D1 point guard with 8+ years of experience training young athletes in shooting mechanics and court vision.",
-    coach_sarah_name: "Coach Sarah",
-    coach_sarah_role: "Fundamentals Specialist",
-    coach_sarah_bio: "Focuses on the 6-11 age groups, teaching correct defensive stance, footwork, and instilling a love for the game.",
+    coach_nate_name: "Coach Nate",
+    coach_nate_role: "Elite Skills Trainer",
+    coach_nate_bio: "Dynamic youth coach specializing in advanced ball handling, footwork, and game situational drills for all age levels.",
 
     // Testimonials Section
     testimonials_eyebrow: "COMMUNITY FEEDBACK",
@@ -267,9 +267,9 @@ export const translations = {
     coach_james_name: "Coach James",
     coach_james_role: "Responsable du développement",
     coach_james_bio: "Ancien meneur de jeu D1 avec plus de 8 ans d'expérience dans l'entraînement des mécanismes de tir et de la vision du jeu.",
-    coach_sarah_name: "Coach Sarah",
-    coach_sarah_role: "Spécialiste des fondamentaux",
-    coach_sarah_bio: "Se concentre sur les groupes d'âge de 6 à 11 ans, en enseignant la position défensive, le jeu de jambes et l'amour du jeu.",
+    coach_nate_name: "Coach Nate",
+    coach_nate_role: "Spécialiste de l'entraînement d'élite",
+    coach_nate_bio: "Entraîneur dynamique spécialisé dans le maniement avancé du ballon, le jeu de jambes et les exercices de situation de jeu pour tous les âges.",
 
     // Testimonials Section
     testimonials_eyebrow: "COMMENTAIRES",
