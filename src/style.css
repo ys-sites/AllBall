@@ -2099,15 +2099,13 @@ button, a {
   border: none;
   overflow: hidden;
   z-index: 1;
-  opacity: 0.65;
-  filter: brightness(0.6);
-  transition: transform 0.8s var(--ease-out), filter 0.8s var(--ease-out), opacity 0.8s var(--ease-out);
+  opacity: 1;
+  filter: none;
+  transition: transform 0.8s var(--ease-out);
 }
 
 .poster-graphic:hover .poster-video {
-  transform: translate(-50%, -50%) scale(1.08) rotate(1deg);
-  opacity: 0.8;
-  filter: brightness(0.7);
+  transform: translate(-50%, -50%) scale(1.05);
 }
 
 /* Button pressed/active feedback */
