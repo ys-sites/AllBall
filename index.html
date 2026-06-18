@@ -70,45 +70,89 @@
 
     <!-- Product Hunt Badge (Removed for AllBall context) -->
 
-    <!-- Event Card -->
-    <div id="event-card">
-      <div class="ec-bend"></div>
-      <div class="ec-face"></div>
-      <div class="ec-edge"></div>
-      <div class="ec-content">
-        <!-- Photo -->
-        <div class="ec-photo">
-          <img
-            src="/AllBall.jpeg"
-            alt="Basketball court"
-            decoding="async"
-            loading="eager"
-          />
-          <div class="ec-photo-shade"></div>
-          <div class="ec-photo-overlay-top">
-            <span class="ec-pill" style="color: #ea580c;">★ 4.3</span>
-            <span class="ec-pill ec-pill-live">61 reviews</span>
+    <!-- Event Cards Wrapper -->
+    <div class="hero-cards-wrapper">
+      <!-- Kirkland Card -->
+      <div class="event-card">
+        <div class="ec-bend"></div>
+        <div class="ec-face"></div>
+        <div class="ec-edge"></div>
+        <div class="ec-content">
+          <!-- Photo -->
+          <div class="ec-photo">
+            <img
+              src="/AllBall.jpeg"
+              alt="Kirkland court"
+              decoding="async"
+              loading="eager"
+            />
+            <div class="ec-photo-shade"></div>
+            <div class="ec-photo-overlay-top">
+              <span class="ec-pill ec-pill-live">61 reviews</span>
+            </div>
+            <div class="ec-photo-overlay-bottom">
+              <h3 class="ec-title">Centre AllBall</h3>
+              <p class="ec-date">Sports complex - Kirkland</p>
+            </div>
           </div>
-          <div class="ec-photo-overlay-bottom">
-            <h3 class="ec-title">Centre AllBall</h3>
-            <p class="ec-date">Sports complex</p>
+
+          <!-- Venue Block -->
+          <div class="ec-venue">
+            <span class="ec-venue-name">3280 Jean Yves St</span>
+            <span class="ec-venue-addr">Montreal, Quebec H9J 4C1</span>
+          </div>
+          
+          <div class="ec-venue" style="border-top: none; padding-top: 0;">
+            <span class="ec-venue-addr">Open today: 9 a.m.–12 a.m.</span>
+          </div>
+
+          <!-- Actions -->
+          <div class="ec-actions">
+            <a href="https://www.google.com/maps/search/?api=1&query=3280+Jean+Yves+St+Montreal+Quebec+H9J+4C1" target="_blank" rel="noopener" class="btn-ghost">Directions</a>
+            <a href="tel:+15145185061" class="btn-dark">Call</a>
           </div>
         </div>
+      </div>
 
-        <!-- Venue Block -->
-        <div class="ec-venue">
-          <span class="ec-venue-name">3280 Jean Yves St</span>
-          <span class="ec-venue-addr">Montreal, Quebec H9J 4C1</span>
-        </div>
-        
-        <div class="ec-venue" style="border-top: none; padding-top: 0;">
-          <span class="ec-venue-addr">Open today: 9 a.m.–12 a.m.</span>
-        </div>
+      <!-- Vaudreuil Card -->
+      <div class="event-card">
+        <div class="ec-bend"></div>
+        <div class="ec-face"></div>
+        <div class="ec-edge"></div>
+        <div class="ec-content">
+          <!-- Photo -->
+          <div class="ec-photo">
+            <img
+              src="/vaudreuil_court.png"
+              alt="Vaudreuil court"
+              decoding="async"
+              loading="eager"
+            />
+            <div class="ec-photo-shade"></div>
+            <div class="ec-photo-overlay-top">
+              <span class="ec-pill ec-pill-live" style="background: #ea580c; color: white;">NEW LOCATION</span>
+            </div>
+            <div class="ec-photo-overlay-bottom">
+              <h3 class="ec-title">Centre AllBall</h3>
+              <p class="ec-date">Sports complex - Vaudreuil</p>
+            </div>
+          </div>
 
-        <!-- Actions -->
-        <div class="ec-actions">
-          <a href="https://www.google.com/maps/search/?api=1&query=3280+Jean+Yves+St+Montreal+Quebec+H9J+4C1" target="_blank" rel="noopener" class="btn-ghost">Directions</a>
-          <a href="tel:+15149944477" class="btn-dark">Call</a>
+          <!-- Venue Block -->
+          <div class="ec-venue">
+            <span class="ec-venue-name">3660 Boul de la Cité-des-Jeunes</span>
+            <span class="ec-venue-addr">Vaudreuil-Dorion, QC J7V 8P2</span>
+          </div>
+          
+          <div class="ec-venue" style="border-top: none; padding-top: 0;">
+            <span class="ec-venue-addr">Open today: 9 a.m.–12 a.m.</span>
+          </div>
+
+          <!-- Actions -->
+          <div class="ec-actions">
+            <a href="https://www.google.com/maps/search/?api=1&query=3660+Boul+de+la+Cite-des-Jeunes+Vaudreuil-Dorion+QC+J7V+8P2" target="_blank" rel="noopener" class="btn-ghost">Directions</a>
+            <a href="tel:+15145185061" class="btn-dark">Call</a>
+          </div>
         </div>
       </div>
     </div>
@@ -706,7 +750,7 @@
 
             const formData = new FormData(form);
 
-            fetch("https://formsubmit.co/ajax/sharafath2001@hotmail.com", {
+            fetch("https://formsubmit.co/ajax/info@centreallball.ca", {
                 method: "POST",
                 headers: { 
                     'Accept': 'application/json'
@@ -757,7 +801,7 @@
             <li style="display:flex; gap: 1.5rem;"><span style="min-width:90px;">Sunday</span><span style="color:var(--ink); font-weight:500;">9 a.m. – 12 a.m.</span></li>
           </ul>
         </div>
-        <a href="tel:+15149944477" class="btn-dark-lg" style="white-space:nowrap;">📞 Call Us</a>
+        <a href="tel:+15145185061" class="btn-dark-lg" style="white-space:nowrap;">📞 Call Us</a>
       </div>
 
       <!-- Two location cards + maps -->
@@ -839,9 +883,22 @@
             ALLBALL
           </div>
           <p class="footer-tagline">Montreal's finest sports complex for youth basketball training and development.</p>
-          <div class="footer-socials">
-            <a href="#" class="social-pill glass-pill">Facebook</a>
-            <a href="#" class="social-pill glass-pill">Instagram</a>
+          <div class="footer-socials" style="display: flex; gap: 10px; margin-top: 1rem;">
+            <a href="https://www.facebook.com/allballmtl" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/allballmtl/" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+              </svg>
+            </a>
+            <a href="https://www.tiktok.com/@allballmtl" target="_blank" rel="noopener" class="footer-social-btn" aria-label="TikTok">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.67a8.18 8.18 0 004.78 1.52V6.73a4.85 4.85 0 01-1.01-.04z"/>
+              </svg>
+            </a>
           </div>
         </div>
 

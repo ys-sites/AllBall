@@ -437,14 +437,22 @@ img {
 /* =============================================
    EVENT CARD — LIQUID GLASS
    ============================================= */
-#event-card {
+.hero-cards-wrapper {
   position: relative;
   z-index: 10;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateX(-40px);
+  flex-shrink: 0;
+}
+
+.event-card {
+  position: relative;
   width: 320px;
   border-radius: 28px;
   overflow: hidden;
-  opacity: 0;
-  transform: translateX(-40px);
   flex-shrink: 0;
 }
 
@@ -485,19 +493,19 @@ img {
   transition: background 0.4s, box-shadow 0.4s;
 }
 
-#event-card:hover .ec-bend {
+.event-card:hover .ec-bend {
   backdrop-filter: blur(56px) saturate(240%);
   -webkit-backdrop-filter: blur(56px) saturate(240%);
 }
 
-#event-card:hover .ec-face {
+.event-card:hover .ec-face {
   box-shadow:
     0 32px 80px rgba(0, 0, 0, 0.24),
     0 0 0 1px rgba(255, 255, 255, 0.25),
     0 0 100px rgba(255, 200, 100, 0.1);
 }
 
-#event-card:hover .ec-edge {
+.event-card:hover .ec-edge {
   background: rgba(255, 255, 255, 0.42);
   box-shadow:
     inset 0 2px 0 rgba(255, 255, 255, 0.95),
@@ -1371,6 +1379,32 @@ img {
   color: white;
 }
 
+.footer-social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.75);
+  transition: background 0.25s, color 0.25s, transform 0.25s var(--ease-bounce), box-shadow 0.25s;
+  text-decoration: none;
+}
+
+.footer-social-btn:hover {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--ink);
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.footer-social-btn[aria-label="Facebook"]:hover { color: #1877f2; }
+.footer-social-btn[aria-label="Instagram"]:hover { color: #e1306c; }
+.footer-social-btn[aria-label="TikTok"]:hover { color: #010101; }
+
+
 /* Footer links */
 .footer-links-grid {
   display: grid;
@@ -1564,7 +1598,7 @@ button, a {
     text-align: center;
   }
 
-  #event-card { display: none; }
+  .hero-cards-wrapper { display: none; }
 
   #hero-text {
     text-align: center;

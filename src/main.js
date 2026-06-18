@@ -336,7 +336,7 @@ const tl = gsap.timeline({ delay: 0.15 });
 tl.to('.nav-links-wrapper', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.15)
   .to('.lang-selector', { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }, 0.2)
   .to('.nav-cta-btn', { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out', clearProps: 'transform' }, 0.25)
-  .to('#event-card', { opacity: 1, x: 0, duration: 1.1, ease: 'expo.out' }, 0.45)
+  .to('.hero-cards-wrapper', { opacity: 1, x: 0, duration: 1.1, ease: 'expo.out' }, 0.45)
   .to('#hero-text', { opacity: 1, x: 0, duration: 1.1, ease: 'expo.out' }, 0.55)
   .to('#nav-arrow', { opacity: 1, duration: 0.5, ease: 'power2.out' }, 1.0)
   .to('#sig-wrap', { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 1.1)
@@ -384,15 +384,14 @@ sectionMappings.forEach((map) => {
 /* =============================================
    EVENT CARD HOVER (GSAP)
    ============================================= */
-const eventCardEl = document.getElementById('event-card');
-if (eventCardEl) {
-  eventCardEl.addEventListener('mouseenter', () => {
-    gsap.to(eventCardEl, { scale: 1.035, y: -6, duration: 0.55, ease: 'power3.out', overwrite: 'auto' });
+document.querySelectorAll('.event-card').forEach((card) => {
+  card.addEventListener('mouseenter', () => {
+    gsap.to(card, { scale: 1.035, y: -6, duration: 0.55, ease: 'power3.out', overwrite: 'auto' });
   });
-  eventCardEl.addEventListener('mouseleave', () => {
-    gsap.to(eventCardEl, { scale: 1.0, y: 0, duration: 0.55, ease: 'power3.out', overwrite: 'auto' });
+  card.addEventListener('mouseleave', () => {
+    gsap.to(card, { scale: 1.0, y: 0, duration: 0.55, ease: 'power3.out', overwrite: 'auto' });
   });
-}
+});
 
 /* =============================================
    RENDER LOOP with Throttling (IntersectionObserver)
