@@ -307,8 +307,8 @@ img {
 }
 
 @media (max-width: 900px) {
-  .nav-links a[data-i18n="nav_leaderboard"],
-  .nav-links a[data-i18n="nav_how"] {
+  .nav-links a[data-i18n="nav_how"],
+  .nav-links a[data-i18n="nav_locations"] {
     display: none;
   }
 }

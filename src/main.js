@@ -349,13 +349,14 @@ tl.to('.nav-links-wrapper', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out
    ============================================= */
 const navLinks = document.querySelectorAll('.nav-links a');
 const sectionMappings = [
-  { id: '#hero-section', linkHref: '#hero-section' },
-  { id: '#stats-section', linkHref: '#stats-section' },
+  { id: '#services-section', linkHref: '#services-section' },
   { id: '#how-section', linkHref: '#how-section' },
-  { id: '#services-section', linkHref: '#how-section' },
-  { id: '#contact-section', linkHref: '#how-section' },
-  { id: '#faq-section', linkHref: '#site-footer' },
-  { id: '#site-footer', linkHref: '#site-footer' },
+  { id: '#kids-section', linkHref: '#kids-section' },
+  { id: '#birthday-section', linkHref: '#services-section' },
+  { id: '#location-section', linkHref: '#location-section' },
+  { id: '#contact-section', linkHref: '#location-section' },
+  { id: '#faq-section', linkHref: '#faq-section' },
+  { id: '#site-footer', linkHref: '#faq-section' },
 ];
 
 sectionMappings.forEach((map) => {

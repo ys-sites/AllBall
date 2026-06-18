@@ -1,9 +1,10 @@
 export const translations = {
   en: {
     // Navbar
-    nav_play: "Play",
-    nav_leaderboard: "Leaderboard",
+    nav_programs: "Programs",
     nav_how: "How it works",
+    nav_coaches: "Coaches",
+    nav_locations: "Locations",
     nav_faq: "FAQ",
     nav_cta: "Book Now",
 
@@ -172,9 +173,10 @@ export const translations = {
   },
   fr: {
     // Navbar
-    nav_play: "Jouer",
-    nav_leaderboard: "Classement",
+    nav_programs: "Programmes",
     nav_how: "Comment ça marche",
+    nav_coaches: "Entraîneurs",
+    nav_locations: "Nos Terrains",
     nav_faq: "FAQ",
     nav_cta: "Réserver",
 
