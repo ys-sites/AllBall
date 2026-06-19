@@ -100,6 +100,9 @@ export const translations = {
     coach_nate_name: "Coach Nate",
     coach_nate_role: "Elite Skills Trainer",
     coach_nate_bio: "Dynamic youth coach specializing in advanced ball handling, footwork, and game situational drills for all age levels.",
+    coach_zazu_name: "Coach Zazu",
+    coach_zazu_role: "Lead Skills Coordinator",
+    coach_zazu_bio: "Dedicated trainer focusing on athletic coordination, defensive mechanics, and team strategy to prepare kids for competitive play.",
 
     // Testimonials Section
     testimonials_eyebrow: "COMMUNITY FEEDBACK",
@@ -272,6 +275,9 @@ export const translations = {
     coach_nate_name: "Coach Nate",
     coach_nate_role: "Spécialiste de l'entraînement d'élite",
     coach_nate_bio: "Entraîneur dynamique spécialisé dans le maniement avancé du ballon, le jeu de jambes et les exercices de situation de jeu pour tous les âges.",
+    coach_zazu_name: "Coach Zazu",
+    coach_zazu_role: "Coordonnatrice des compétences",
+    coach_zazu_bio: "Entraîneuse dévouée axée sur la coordination athlétique, la mécanique défensive et la stratégie d'équipe pour préparer les enfants à la compétition.",
 
     // Testimonials Section
     testimonials_eyebrow: "COMMENTAIRES",
