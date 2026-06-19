@@ -2071,9 +2071,9 @@ button, a {
 }
 
 #contact-section {
-  background: radial-gradient(circle at 50% 50%, rgba(234, 88, 12, 0.08) 0%, transparent 60%), #0d0d11;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   position: relative;
   overflow: hidden;
 }
@@ -2082,45 +2082,58 @@ button, a {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(rgba(13, 13, 17, 0.85), rgba(13, 13, 17, 0.85)), url('/court-bg.jpg');
+  background-image: url('/court-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.18;
+  opacity: 0.12;
   z-index: 0;
   pointer-events: none;
 }
 
 #contact-section .eyebrow {
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--ink-muted);
 }
 
 #contact-section .section-body {
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--ink-muted);
+}
+
+.contact-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  text-align: left;
 }
 
 #contact-section .contact-input {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: white;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: var(--ink);
+  transition: border-color 0.25s, background-color 0.25s, box-shadow 0.25s;
 }
 
 #contact-section .contact-input:focus {
   border-color: #ea580c;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(0, 0, 0, 0.005);
+  box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.12);
 }
 
 #contact-section .contact-input::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--ink-faint);
 }
 
 #contact-section .contact-select {
-  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%230d0d0d%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
 }
 
 #contact-section .contact-select option {
-  background: #1a1a1f;
-  color: white;
+  background: #ffffff;
+  color: var(--ink);
 }
 
 /* =============================================
