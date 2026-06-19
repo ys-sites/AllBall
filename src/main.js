@@ -349,12 +349,12 @@ tl.to('.nav-links-wrapper', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out
    ============================================= */
 const navLinks = document.querySelectorAll('.nav-links a');
 const sectionMappings = [
-  { id: '#services-section', linkHref: '#services-section' },
   { id: '#how-section', linkHref: '#how-section' },
-  { id: '#kids-section', linkHref: '#kids-section' },
+  { id: '#services-section', linkHref: '#services-section' },
   { id: '#birthday-section', linkHref: '#services-section' },
-  { id: '#location-section', linkHref: '#location-section' },
+  { id: '#kids-section', linkHref: '#kids-section' },
   { id: '#contact-section', linkHref: '#location-section' },
+  { id: '#location-section', linkHref: '#location-section' },
   { id: '#faq-section', linkHref: '#faq-section' },
   { id: '#site-footer', linkHref: '#faq-section' },
 ];
