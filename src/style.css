@@ -2071,10 +2071,56 @@ button, a {
 }
 
 #contact-section {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)), url('/court-bg.jpg');
+  background: radial-gradient(circle at 50% 50%, rgba(234, 88, 12, 0.08) 0%, transparent 60%), #0d0d11;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+#contact-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(13, 13, 17, 0.85), rgba(13, 13, 17, 0.85)), url('/court-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  opacity: 0.18;
+  z-index: 0;
+  pointer-events: none;
+}
+
+#contact-section .eyebrow {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+#contact-section .section-body {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+#contact-section .contact-input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+#contact-section .contact-input:focus {
+  border-color: #ea580c;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+#contact-section .contact-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+#contact-section .contact-select {
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+}
+
+#contact-section .contact-select option {
+  background: #1a1a1f;
+  color: white;
 }
 
 /* =============================================
@@ -2465,5 +2511,75 @@ html, body {
   .rv-card {
     width: 260px;
   }
+}
+
+/* =============================================
+   YS MARKETING SOLUTIONS SIGNATURE
+   ============================================= */
+.footer-signature-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ys-signature-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.3s, border-color 0.3s, transform 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.ys-signature-btn:hover {
+  background: rgba(234, 88, 12, 0.03);
+  border-color: rgba(234, 88, 12, 0.2);
+  transform: translateY(-1px);
+}
+
+.ys-sig-logo {
+  height: 16px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0.9);
+  transition: transform 0.3s;
+  will-change: transform;
+}
+
+.ys-signature-btn:hover .ys-sig-logo {
+  transform: scale(1.05);
+  filter: brightness(1);
+}
+
+.ys-sig-text {
+  font-size: 10px;
+  color: #888899;
+  font-weight: 300;
+  transition: color 0.3s;
+  line-height: 1;
+}
+
+.ys-signature-btn:hover .ys-sig-text {
+  color: #c0c0d0;
+}
+
+.ys-sig-highlight {
+  font-weight: 600;
+  color: white;
+  transition: color 0.3s;
+}
+
+.ys-signature-btn:hover .ys-sig-highlight {
+  color: #ea580c;
+}
+
+.ys-sig-divider {
+  color: rgba(255, 255, 255, 0.1);
+  margin: 0 4px;
 }
 
