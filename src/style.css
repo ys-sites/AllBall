@@ -2596,3 +2596,20 @@ html, body {
   margin: 0 4px;
 }
 
+/* =============================================
+   CONTACT GRID RESPONSE ROW
+   ============================================= */
+.contact-grid-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  text-align: left;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .contact-grid-row {
+    grid-template-columns: 1fr;
+  }
+}
+

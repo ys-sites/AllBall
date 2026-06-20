@@ -687,7 +687,7 @@
           <input type="hidden" name="_subject" value="New Inquiry from Centre AllBall Website!">
           <input type="hidden" name="_captcha" value="false">
           
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; text-align: left; width: 100%;">
+          <div class="contact-grid-row">
             <div style="display: flex; flex-direction: column;">
               <label class="contact-label" data-i18n="contact_label_name">Full Name</label>
               <input type="text" name="Name" class="contact-input" placeholder="Full Name" data-i18n-placeholder="contact_placeholder_name" required />
@@ -736,7 +736,7 @@
 
             const formData = new FormData(form);
 
-            fetch("https://formsubmit.co/ajax/info@centreallball.ca", {
+            fetch("https://formsubmit.co/ajax/centreallball@gmail.com", {
                 method: "POST",
                 headers: { 
                     'Accept': 'application/json'
