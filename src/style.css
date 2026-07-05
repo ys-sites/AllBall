@@ -2571,19 +2571,19 @@ html, body {
 
 .ys-sig-text {
   font-size: 10px;
-  color: #888899;
+  color: #a1a1aa; /* text-zinc-400 */
   font-weight: 300;
   transition: color 0.3s;
   line-height: 1;
 }
 
 .ys-signature-btn:hover .ys-sig-text {
-  color: #c0c0d0;
+  color: #d4d4d8; /* text-zinc-300 */
 }
 
 .ys-sig-highlight {
   font-weight: 600;
-  color: white;
+  color: #a1a1aa; /* text-zinc-400 */
   transition: color 0.3s;
 }
 
