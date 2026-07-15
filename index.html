@@ -258,10 +258,31 @@
 
     <!-- LEFT HAND SIDE POSTER -->
     <div class="poster-graphic" style="position: relative; container-type: inline-size; background-color: #0a0a0a; width: 100%; max-width: 580px; border-radius: 6px; aspect-ratio: 4/5; overflow: hidden; color: #ffffff; box-shadow: 0 30px 60px rgba(0,0,0,0.15); flex: 1; align-self: center;">
-      <!-- Direct Video Embed -->
-      <video class="poster-video" autoplay loop muted playsinline preload="auto" style="object-fit: cover;">
-        <source src="https://cdn.mevoyages.com/All%20Ball/AQM3CfBKsaqFG1GXCLUy_ILIWgUNBkpLSnV952rvI7FASXvgetcVpnyUideFTQofWCPvD-znSBO3cwXwmYvzJ0RDMARd7U60kcM8ic0.mp4" type="video/mp4" />
-      </video>
+      <div id="poster-container" class="poster-video-container">
+        <!-- Direct Video Embed -->
+        <video id="poster-video-el" class="poster-video" autoplay loop muted playsinline preload="auto" style="object-fit: cover;">
+          <source src="https://cdn.mevoyages.com/All%20Ball/AQM3CfBKsaqFG1GXCLUy_ILIWgUNBkpLSnV952rvI7FASXvgetcVpnyUideFTQofWCPvD-znSBO3cwXwmYvzJ0RDMARd7U60kcM8ic0.mp4" type="video/mp4" />
+        </video>
+
+        <!-- Video Controls Overlay -->
+        <div id="poster-overlay" class="poster-video-overlay">
+          <div class="play-btn-circle">
+            <!-- Play SVG Icon -->
+            <svg id="svg-play" viewBox="0 0 24 24" width="32" height="32" fill="#ffffff" style="margin-left: 4px;"><path d="M8 5v14l11-7z"/></svg>
+            <!-- Pause SVG Icon -->
+            <svg id="svg-pause" viewBox="0 0 24 24" width="32" height="32" fill="#ffffff" style="display: none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          </div>
+        </div>
+
+        <!-- Audio/Mute Badge -->
+        <button id="poster-audio-btn" class="poster-audio-badge" aria-label="Toggle Audio">
+          <span id="audio-status-text">Muted</span>
+          <!-- Mute SVG Icon -->
+          <svg id="svg-speaker-off" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M3.14 3.29L2 4.43 5.57 8H3v8h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.03a11.93 11.93 0 003.72-1.77l2.85 2.85 1.14-1.14L3.14 3.29zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+          <!-- Unmute SVG Icon -->
+          <svg id="svg-speaker-on" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="display: none;"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+        </button>
+      </div>
     </div>
 
     <div class="how-content" style="flex: 1;">
@@ -955,5 +976,81 @@
     </div>
     <button class="btn-dark-sm" style="background: #ea580c; color: white;" data-i18n="sticky_cta_btn" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Book Now →</button>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const posterContainer = document.getElementById('poster-container');
+      const posterVideo = document.getElementById('poster-video-el');
+      const posterOverlay = document.getElementById('poster-overlay');
+      const posterAudioBtn = document.getElementById('poster-audio-btn');
+      const svgPlay = document.getElementById('svg-play');
+      const svgPause = document.getElementById('svg-pause');
+      const audioStatusText = document.getElementById('audio-status-text');
+      const svgSpeakerOff = document.getElementById('svg-speaker-off');
+      const svgSpeakerOn = document.getElementById('svg-speaker-on');
+
+      if (!posterContainer || !posterVideo) return;
+
+      function updateUI() {
+        const isPaused = posterVideo.paused;
+        const isMuted = posterVideo.muted;
+
+        // Play/Pause icon toggles
+        if (isPaused) {
+          svgPlay.style.display = 'block';
+          svgPause.style.display = 'none';
+          posterContainer.classList.remove('is-playing');
+        } else {
+          svgPlay.style.display = 'none';
+          svgPause.style.display = 'block';
+          posterContainer.classList.add('is-playing');
+        }
+
+        // Mute/Unmute status
+        if (isMuted) {
+          audioStatusText.textContent = 'Muted';
+          svgSpeakerOff.style.display = 'block';
+          svgSpeakerOn.style.display = 'none';
+          posterContainer.classList.remove('is-unmuted');
+        } else {
+          audioStatusText.textContent = 'Sound On';
+          svgSpeakerOff.style.display = 'none';
+          svgSpeakerOn.style.display = 'block';
+          posterContainer.classList.add('is-unmuted');
+        }
+      }
+
+      // Toggle Play/Pause when clicking overlay (plays unmuted by default on activation)
+      posterOverlay.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (posterVideo.paused) {
+          posterVideo.muted = false;
+          posterVideo.play().then(updateUI).catch(console.error);
+        } else {
+          posterVideo.pause();
+          updateUI();
+        }
+      });
+
+      // Toggle Audio status on the badge click
+      posterAudioBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        posterVideo.muted = !posterVideo.muted;
+        if (!posterVideo.muted && posterVideo.paused) {
+          posterVideo.play().then(updateUI).catch(console.error);
+        } else {
+          updateUI();
+        }
+      });
+
+      // Sync event listeners
+      posterVideo.addEventListener('play', updateUI);
+      posterVideo.addEventListener('pause', updateUI);
+      posterVideo.addEventListener('volumechange', updateUI);
+
+      // Initial check
+      updateUI();
+    });
+  </script>
 </body>
 </html>
