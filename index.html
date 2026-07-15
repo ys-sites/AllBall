@@ -7,9 +7,9 @@
   <title>Centre AllBall</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/src/style.css" />
-  <!-- Preconnect to Cloudinary CDN to eliminate DNS/TLS round-trip delay for the hero video -->
-  <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
-  <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+  <!-- Preconnect to mevoyages CDN to eliminate DNS/TLS round-trip delay for the videos -->
+  <link rel="preconnect" href="https://cdn.mevoyages.com" crossorigin />
+  <link rel="dns-prefetch" href="https://cdn.mevoyages.com" />
 </head>
 <body>
 
@@ -65,7 +65,7 @@
       preload="auto"
       style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.65; will-change: transform;"
     >
-      <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/so_3,eo_38/YTDown_YouTube_Cinematic-Sports-Video-Basketball-Shoot-_Media_tWU8CXFLOgk_001_1080p_mdimk2.mp4" type="video/mp4" />
+      <source src="https://cdn.mevoyages.com/All%20Ball/YTDown_YouTube_Cinematic-Sports-Video-Basketball-Shoot-_Media_tWU8CXFLOgk_001_1080p_mdimk2.mp4" type="video/mp4" />
     </video>
     <div style="position: absolute; inset: 0; background: linear-gradient(to left, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 100%); z-index: 1;"></div>
 
@@ -258,8 +258,10 @@
 
     <!-- LEFT HAND SIDE POSTER -->
     <div class="poster-graphic" style="position: relative; container-type: inline-size; background-color: #0a0a0a; width: 100%; max-width: 580px; border-radius: 6px; aspect-ratio: 4/5; overflow: hidden; color: #ffffff; box-shadow: 0 30px 60px rgba(0,0,0,0.15); flex: 1; align-self: center;">
-      <!-- Cloudinary Video Embed -->
-      <iframe class="poster-video" src="https://player.cloudinary.com/embed/?cloud_name=dzgmvz6tc&public_id=AQM3CfBKsaqFG1GXCLUy_ILIWgUNBkpLSnV952rvI7FASXvgetcVpnyUideFTQofWCPvD-znSBO3cwXwmYvzJ0RDMARd7U60kcM8ic0_jfjuvj" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+      <!-- Direct Video Embed -->
+      <video class="poster-video" autoplay loop muted playsinline preload="auto" style="object-fit: cover;">
+        <source src="https://cdn.mevoyages.com/All%20Ball/AQM3CfBKsaqFG1GXCLUy_ILIWgUNBkpLSnV952rvI7FASXvgetcVpnyUideFTQofWCPvD-znSBO3cwXwmYvzJ0RDMARd7U60kcM8ic0.mp4" type="video/mp4" />
+      </video>
     </div>
 
     <div class="how-content" style="flex: 1;">
